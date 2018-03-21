@@ -342,6 +342,9 @@ nav ul li {
 /* Contact */
 .contactPannel {
 	background-color: #ededed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 .contactFormPannelBackground {
 	background: url("../images/miami-beach-blur.png") 100% no-repeat;

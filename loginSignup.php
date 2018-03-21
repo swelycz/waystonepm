@@ -11,7 +11,7 @@
           e.preventDefault();
           $.ajax({
             type: 'post',
-            url: 'formProcess.php',
+            url: 'loginFormProcess.php',
             data: $('#loginForm').serialize()
           });
           console.log($('#loginForm').serialize());
@@ -30,7 +30,7 @@
         }
       </script>
       <div class = "logSignTitle">Login</div>
-      <form class = "loginForm" name="loginForm" id="loginForm" action="loginSignup.php" method="post">
+      <form class = "loginForm" name="loginForm" id="loginForm" action="loginFormProcess.php" method="post">
         <input type="text" name="email" id="email" placeholder="Email Address" maxlength="64" autofocus>
         <input type="password" name="password" id="password" placeholder="Password" maxlength="32">
         <button type="submit" class = "loginButton"></button>
