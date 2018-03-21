@@ -8,12 +8,12 @@
   );
   //Establishes the connection
   $conn = sqlsrv_connect($serverName, $connectionOptions);
-
-  $email = $_POST["email"];
+  
+  /*$email = $_POST["email"];
   $pass = $_POST["pass"];
 
   if ($email == "index") {
     header('Location: index.php');
     die();
-  }
+  }/*
 ?>
