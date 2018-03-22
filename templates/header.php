@@ -24,11 +24,6 @@
                   <span class = "link-spanner"></span>
                 </a>
               </li>
-              <li class = "boxEffect">Feedback
-                <a href = "#">
-                  <span class = "link-spanner"></span>
-                </a>
-              </li>
               <li class = "boxEffect">FAQ
                 <a href = "FAQ.php">
                   <span class = "link-spanner"></span>
