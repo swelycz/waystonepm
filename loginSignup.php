@@ -14,7 +14,6 @@
         <button type="submit" class = "loginButton"></button>
       </form>
     </div>
-
   </div>
 </div>
 <?php include("templates/footer.php") ?>
