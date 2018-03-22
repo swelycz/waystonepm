@@ -96,6 +96,30 @@ $(document).ready(function() {
       $(".submitButton").addClass("validate", 450);
     }, 2250);
   }
+  var input = document.querySelector('#email');
+  function validateEmail(email) {
+    var re = /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
+    return re.test(email);
+  }
+  function validate() {
+    var $result = $("#result");
+    var email = input.value;
 
+    if (validateEmail(email)) {
+      $("#email").css("border-color":"#14ff00");
+      $("#email").css("box-shadow":"0 0 10px #14ff00");
+    } else {
+      $("#email").css("border-color":"#ff0000");
+      $("#email").css("box-shadow":"0 0 10px #ff0000");
+    }
+    return false;
+  }
+  input.addEventListener('input', function()
+  {
+    validate();
+  });
+
+
+$("#validate").bind("click", validate);
   $("#DOB").datepicker();
 });

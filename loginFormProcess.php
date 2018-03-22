@@ -46,7 +46,7 @@
 
   list($msg, $success) = loginUser($conn);
   $_SESSION['msg'] = $msg;
-  $_SESSION['email'] = $_POST['email'];
+  $_SESSION['email'] = $email;
 
   if ($success) {
     $location = 'accountPage.php';
