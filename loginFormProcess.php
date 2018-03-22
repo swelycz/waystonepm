@@ -47,10 +47,10 @@
   if ($success) {
     $location = 'accountPage.php';
   } else {
-    $location = 'index.php';
+    $location = 'loginSignup.php';
   }
 
-  sqlsrv_free_stmt($result);
-  header("Location: $location");
+  //sqlsrv_free_stmt($result);
+  //header("Location: $location");
 
 ?>
