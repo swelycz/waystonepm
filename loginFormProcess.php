@@ -33,7 +33,7 @@
     if ($stmt === false) {
       die(print_r(sqlsrv_errors(), true));
     }
-    $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC;
+    $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
     var_dump($row);
     if (!$result) {
       return [$conn->error, false];
