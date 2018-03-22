@@ -4,6 +4,7 @@
 	--p-font: "Marriweather";
 	--title-font: "Nanum Myeongjo";
 	--green: #008c07;
+	--red: #cb0000;
 }
 * {
 	margin: 0;
@@ -589,6 +590,9 @@ nav ul li {
 	transition: all .4s ease;
 	animation: fadein .8s;
 }
+#loginModule .logSignTitle {
+	margin-bottom: 40px;
+}
 .loginForm {
 	display: flex;
 	align-items: center;
@@ -598,19 +602,28 @@ nav ul li {
 .loginForm input[type=text], .loginForm input[type=password], .signupForm input[type=text], .signupForm input[type=password] {
 	width: 200px;
 	height: 30px;
-	font-size: 18px;fdaf
+	font-size: 18px;
 	letter-spacing: 1px;
-	margin-top: 15px;
+	margin-bottom: 15px;
 	transition: all .25s;
 }
 #emailValidationMsg {
 	font-size: 14px;
-	color: #cb0000;
+	color: var(--red);
 	font-family: var(--p-font);
 	visibility: hidden;
 }
+#confEmailValidationMsg {
+	visibility: hidden;
+	color: var(--red);
+}
+#confPassValidationMsg {
+	visibility: hidden;
+	color: var(--red);
+	margin-left: 250px;
+}
 .loginButton {
-	margin-top: 70px;
+	margin-top: 50px;
 }
 #signupModule {
 	display: flex;
@@ -631,17 +644,42 @@ nav ul li {
 .signupFormInputs {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+}
+.signupFormInputs #emailValidationMsg {
+	padding-right: 100px;
+}
+.dobLabel {
+	padding-left: 20px;
+	font-size: 18px;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 15px;
+}
+.signupForm #city {
+	width: 120px;
+}
+.signupForm #zip {
+	width: 100px;
+}
+.signupForm #phone {
+	width: 130px;
 }
 .signupForm input {
+	margin-left: 10px;
+}
+.signupForm select {
+	font-family: var(--p-font);
+	font-size: 18px;
+	height: 35px;
+	margin-bottom: 15px;
 	margin-left: 10px;
 }
 #mIni {
 	width: 25px;
 	text-align: center;
 	text-transform: uppercase;
-}
-.signupButton {
-	margin-top: 50px;
 }
 /* footer */
 footer {
