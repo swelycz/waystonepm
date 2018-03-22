@@ -118,5 +118,4 @@ $(document).ready(function() {
   }
   emailInput.addEventListener('input', function() {
     validateEmail();
-    compareEmails();
   });
