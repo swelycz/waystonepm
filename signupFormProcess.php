@@ -15,12 +15,12 @@
     $lname = filter_var($_POST['lname'], FILTER_SANITIZE_SPECIAL_CHARS);
     $address = filter_var($_POST['address'], FILTER_SANITIZE_SPECIAL_CHARS);
     $city = filter_var($_POST['city'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $state = filter_var($_POST['state'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $state = filter_var($_POST['state']);
     $zip = filter_var($_POST['zip'], FILTER_SANITIZE_SPECIAL_CHARS);
     $phone = filter_var($_POST['phone'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $day = filter_var($_POST['days'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $month = filter_var($_POST['months'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $year = filter_var($_POST['years'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $day = filter_var($_POST['days']);
+    $month = filter_var($_POST['months']);
+    $year = filter_var($_POST['years']);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
     $confEmail = filter_var($_POST['confEmail'], FILTER_SANITIZE_SPECIAL_CHARS);
     $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
