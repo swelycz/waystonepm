@@ -50,8 +50,8 @@ $(window).scroll(function(){
 });
 $(document).ready(function() {
 
-  var $loginModule = "<div id = 'loginModule'><div class = 'logSignTitle'>Login</div><form class = 'loginForm' name='loginForm' id='loginForm' action='loginSignup.php' method='post'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64'><input type='password' name='password' id='password' placeholder='Password' maxlength='32'><button type='submit' class = 'loginButton'></button></form></div>";
-  var $signupModule = "<div id = 'signupModule'><div class = 'logSignTitle'>Sign Up</div><form class = 'signupForm' name='signupForm' id='signupForm' action='loginSignup.php' method='post'><div class = 'signupFormInputs'><input type='text' name='firstName' id='fName' placeholder='First  Name' maxlength='32'><input type='text' name='middleInitial' id='mIni' placeholder='MI' maxlength='1'><input type='text' name='lastName' id='lName' placeholder='Last Name' maxlength='32'></div><div class='signupFormInputs'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64'><input type='text' name='confEmail' id='confEmail' placeholder='Confirm Email' maxlength='64'></div><div class='signupFormInputs'><input type='password' name='password' id='pass' placeholder='Password' maxlength='32'><input type='password' name='confPassword' id='confPass' placeholder='Confirm Password' maxlength='32'></div><button type='submit' class = 'signupButton'></button></form></div>";
+  var $loginModule = "<div id = 'loginModule'><div class = 'logSignTitle'>Login</div><form class = 'loginForm' name='loginForm' id='loginForm' action='loginFormProcess.php' method='post'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64'><input type='password' name='password' id='password' placeholder='Password' maxlength='32'><button type='submit' class = 'loginButton'></button></form></div>";
+  var $signupModule = "<div id = 'signupModule'><div class = 'logSignTitle'>Sign Up</div><form class = 'signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'><div class = 'signupFormInputs'><input type='text' name='fname' id='fname' placeholder='First  Name' maxlength='32' required><input type='text' name='mIni' id='mIni' placeholder='MI' maxlength='1' required><input type='text' name='lname' id='lname' placeholder='Last Name' maxlength='32' required></div><div class='signupFormInputs'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64' required><input type='text' name='confEmail' id='confEmail' placeholder='Confirm Email' maxlength='64' required></div><div class='signupFormInputs'><input type='password' name='password' id='password' placeholder='Password' maxlength='32' required><input type='password' name='confPass' id='confPass' placeholder='Confirm Password' maxlength='32' required></div><button type='submit' class = 'signupButton'></button></form></div>";
   $("#loginModuleButton").click(function() {
     if (!$("#loginModuleButton").hasClass("focused")) {
       $("#signupModule").remove();
@@ -103,7 +103,7 @@ $(document).ready(function() {
   }
   function validateEmail() {
     var email = emailInput.value;
-    
+
     if (!checkEmail(email)) {
       $("#email").css("border-color","#ff0000");
       $("#email").css("box-shadow","0 0 10px #ff0000");
