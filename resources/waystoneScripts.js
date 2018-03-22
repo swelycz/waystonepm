@@ -77,7 +77,7 @@ $(document).ready(function() {
   $(".signupButton").click(function() {
     if (!$(".signupButton").hasClass("validate")) {
       $(".signupButton").addClass("onclic", 250);
-      validateContact();
+      validateSignup();
     }
   });
   function validateSignup() {
@@ -101,7 +101,7 @@ $(document).ready(function() {
   $(".submitContactButton").click(function() {
     if (!$(".submitContactButton").hasClass("validate")) {
       $(".submitContactButton").addClass("onclic", 250);
-      validateSignup();
+      validateContact();
     }
   });
   function validateContact() {
