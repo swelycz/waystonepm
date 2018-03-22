@@ -75,35 +75,35 @@ $(document).ready(function() {
     }
   });
 
-  $('#contactForm').on('submit', function (e) {
-    e.preventDefault();
-    $.ajax({
-      type: 'post',
-      url: 'formProcess.php',
-      data: $('#contactForm').serialize()
-    });
-    console.log($('#contactForm').serialize());
-  });
-  $(".submitButton").click(function() {
-    if (!$(".submitButton").hasClass("validate")) {
-      $(".submitButton").addClass("onclic", 250);
+
+  $(".submitContactButton").click(function() {
+    if (!$(".submitContactButton").hasClass("validate")) {
+      $(".submitContactButton").addClass("onclic", 250);
       validateContact();
     }
   });
   function validateContact() {
+    var fname = $("#fname").value;
+    var lname = $("#lname").value;
+    var email = $("#email").value;
+    var phone = $("#phone").value;
     setTimeout(function() {
-      $(".submitButton").removeClass("onclic");
-      $(".submitButton").addClass("validate", 450);
+      if (fname == null || fname == "",lname == null || lname == "",email == null || email == "",phone == null || phone == "") {
+        $(".submitContactButton").removeClass("onclic");
+      } else {
+        $(".submitContactButton").removeClass("onclic");
+        $(".submitContactButton").addClass("validate", 450);
+      }
     }, 2250);
   }
-  var input = document.querySelector('#email');
+  var emailInput = document.querySelector('#email');
   function checkEmail(email) {
     var re = /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
     return re.test(email);
   }
   function validateEmail() {
-    var email = input.value;
-
+    var email = emailInput.value;
+    
     if (!checkEmail(email)) {
       $("#email").css("border-color","#ff0000");
       $("#email").css("box-shadow","0 0 10px #ff0000");
@@ -116,8 +116,10 @@ $(document).ready(function() {
       return true;
     }
   }
-  input.addEventListener('input', function()
+  emailInput.addEventListener('input', function()
   {
     validateEmail();
   });
+
+  $("#phone").mask('(000) 000-0000');
 });

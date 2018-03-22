@@ -2,20 +2,21 @@
   <div class="contactFormPannelBackground">
     <div class="contactFormPannel">
       <div class = "pageTitle"><p>Contact</p></div>
-      <form class="contactForm" id="contactForm" action="contact.php" method="post">
+      <form class="contactForm" id="contactForm" action="contactFormProcess.php" method="post">
         <div class="contactFormInputs">
-          <input type="text" id="fname" name="firstName" maxlength="32" placeholder="First Name">
-          <input type="text" id="lname" name="lastName"maxlength="32" placeholder="Last Name">
+          <input type="text" id="fname" name="firstName" maxlength="32" placeholder="First Name" required>
+          <input type="text" id="lname" name="lastName"maxlength="32" placeholder="Last Name" required>
         </div>
+        <p id="emailValidationMsg">Email entered is not valid</p>
         <div class = "contactFormInputs">
-          <input type="email" id="email" name="email" maxlength="64" placeholder="Email Address">
-          <input type="text" id="phone" name="phone" maxlength="11" placeholder="Phone Number" >
+          <input type="email" id="email" name="email" maxlength="64" placeholder="Email Address" required>
+          <input type="text" id="phone" name="phone" maxlength="14" placeholder="Phone Number" required>
         </div>
         <div class="contactFormInputs">
           <textarea id="message" cols="30" rows="5" name="message" placeholder="Optional message..." ></textarea>
         </div>
         <div class = "buttonContainer">
-          <button type="submit" class = "submitButton"></button>
+          <button type="submit" class = "submitContactButton"></button>
         </div>
       </form>
     </div>

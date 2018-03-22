@@ -361,7 +361,7 @@ nav ul li {
 }
 .contactForm {
 	width: 80%;
-	padding: 50px 0;
+	padding-bottom: 50px;
 	margin: 0 auto;
 }
 .contactForm p {
@@ -375,6 +375,7 @@ nav ul li {
 	color: var(--dark-blue);
 	letter-spacing: 2px;
 	margin-left: 50px;
+	margin-top: 10px;
 	transition: all .25s;
 }
 .contactForm textarea:focus {
@@ -393,8 +394,12 @@ nav ul li {
 	border: 1px solid var(--dark-blue);
 	box-shadow: none;
 	font-size: 18px;
+	margin-top: 30px;
 	letter-spacing: 2px;
 	transition: all .25s;
+}
+.contactForm #emailValidationMsg {
+	margin-left: 370px;
 }
 .contactFormInputs {
 	width: 100%;
@@ -833,7 +838,7 @@ footer ul li a {
 .loginButton:after {
   content: "LOGIN";
 }
-.submitButton {
+.submitContactButton {
   outline: none;
   height: 40px;
   text-align: center;
@@ -846,18 +851,19 @@ footer ul li a {
   text-shadow: 0;
 	font-size: 16px;
 	font-weight: bold;
+	margin-top: 10px;
 	font-family: var(--p-font);
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.submitButton:hover {
+.submitContactButton:hover {
   color: white;
   background: var(--green);
 }
-.submitButton:active {
+.submitContactButton:active {
   letter-spacing: 2px;
 }
-.submitButton:after {
+.submitContactButton:after {
   content: "SUBMIT";
 }
 .onclic {

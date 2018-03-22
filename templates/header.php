@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="resources/waystoneStyles.css?<?php echo time(); ?>" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="resources/jquery.mask.js"></script>
     <script src="resources/waystoneScripts.js?<?php echo time();?>"></script>
   </head>
   <body>
