@@ -25,7 +25,7 @@
     $confEmail = filter_var($_POST['confEmail'], FILTER_SANITIZE_SPECIAL_CHARS);
     $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
     $confPass = filter_var($_POST['confPass'], FILTER_SANITIZE_SPECIAL_CHARS);
-
+    var_dump($_POST);
     if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($day) || empty($month) || empty($year) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
       return ['all fields required', false];
     } else if ($email !== $confEmail) {
