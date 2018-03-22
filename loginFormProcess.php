@@ -20,6 +20,7 @@
 
   sqlsrv_free_stmt($stmt);
 */
+  var_dump($_POST);
   function loginUser(&$conn) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
     $pass = filter_var($_POST['pass'], FILTER_SANITIZE_SPECIAL_CHARS);
