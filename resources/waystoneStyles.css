@@ -593,7 +593,7 @@ nav ul li {
 .loginForm input[type=text], .loginForm input[type=password], .signupForm input[type=text], .signupForm input[type=password] {
 	width: 200px;
 	height: 30px;
-	font-size: 18px;
+	font-size: 18px;fdaf
 	letter-spacing: 1px;
 	margin-top: 15px;
 	transition: all .25s;
