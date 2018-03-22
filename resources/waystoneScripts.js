@@ -74,7 +74,29 @@ $(document).ready(function() {
       $("#loginModuleButton").addClass("unfocused");
     }
   });
-
+  $(".signupButton").click(function() {
+    if (!$(".signupButton").hasClass("validate")) {
+      $(".signupButton").addClass("onclic", 250);
+      validateContact();
+    }
+  });
+  function validateContact() {
+    var fname = $("#fname").value;
+    var mi = $("#mIni").value;
+    var lname = $("#lname").value;
+    var email = $("#email").value;
+    var confEmail = ("#confEmail").value;
+    var pass = $("#password").value;
+    var confPass = ("#confPass").value;
+    setTimeout(function() {
+      if (fname == null || fname == "",mi == null || mi == "",lname == null || lname == "",email == null || email == "",confEmail == null || confEmail == "",pass == null || pass == "",confPass == null || confPass == "") {
+        $(".signupButton").removeClass("onclic");
+      } else {
+        $(".signupButton").removeClass("onclic");
+        $(".signupButton").addClass("validate", 450);
+      }
+    }, 2250);
+  }
 
   $(".submitContactButton").click(function() {
     if (!$(".submitContactButton").hasClass("validate")) {
