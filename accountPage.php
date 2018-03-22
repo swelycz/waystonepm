@@ -1,4 +1,4 @@
-<?php include("templates/header.php")
+<?php include("templates/header.php");
   if (is_null($_SESSION['email'])) {
     header("Location: index.php");
   }
