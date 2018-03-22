@@ -4,11 +4,10 @@
           <ul>
             <li><a href = "index.php">Home</a></li>
             <li><a href = "contact.php">Contact</a></li>
-            <li>Feedback</li>
             <li><a href = "faq.php">FAQ</a></li>
           </ul>
           <ul>
-            <li><a href = "loginSignup.php">Login/Signup</a></li>
+            <li><a href = "https://waystonepm-tenantportal.azurewebsites.net">Login/Signup</a></li>
           </ul>
         </div>
         <div class = "footerLogoWrapper"><div class = "footerLogo"></div></div>
