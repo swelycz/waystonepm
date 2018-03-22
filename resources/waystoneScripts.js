@@ -97,26 +97,27 @@ $(document).ready(function() {
     }, 2250);
   }
   var input = document.querySelector('#email');
-  function validateEmail(email) {
+  function checkEmail(email) {
     var re = /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
     return re.test(email);
   }
-  function validate() {
-    var $result = $("#result");
+  function validateEmail() {
     var email = input.value;
 
-    if (validateEmail(email)) {
-      $("#email").css("border-color","#14ff00");
-      $("#email").css("box-shadow","0 0 10px #14ff00");
-    } else {
+    if (!checkEmail(email)) {
       $("#email").css("border-color","#ff0000");
       $("#email").css("box-shadow","0 0 10px #ff0000");
+      $("#emailValidationMsg").css("visibility","visible");
+      return false;
+    } else {
+      $("#email").css("border-color",'');
+      $("#email").css("box-shadow",'');
+      $("#emailValidationMsg").css("visibility",'');
+      return true;
     }
-    return false;
   }
   input.addEventListener('input', function()
   {
-    validate();
+    validateEmail();
   });
-  $("#DOB").datepicker();
 });
