@@ -20,7 +20,6 @@
 
   sqlsrv_free_stmt($stmt);
 */
-  var_dump($_POST);
   function loginUser(&$conn) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
     $pass = filter_var($_POST['pass'], FILTER_SANITIZE_SPECIAL_CHARS);
@@ -30,8 +29,9 @@
     }
 
     $q = "select * from tenant_login where email = '$email'";
-    $result = sqlsrv_query($conn, $testQuery);
+    $result = sqlsrv_query($conn, $q);
 
+    var_dump($result);
     if (!$result) {
       return [$conn->error, false];
     } elseif ($result->num_rows !== 1) {
