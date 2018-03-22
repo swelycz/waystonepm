@@ -9,6 +9,9 @@
   //Establishes the connection
   $conn = sqlsrv_connect($serverName, $connectionOptions);
 
+  $test = $conn->query("select * from tenant_login");
+  echo $test;
+
   /*$email = $_POST["email"];
   $pass = $_POST["pass"];
 
