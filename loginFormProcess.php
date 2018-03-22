@@ -9,14 +9,15 @@
   //Establishes the connection
   $conn = sqlsrv_connect($serverName, $connectionOptions);
   $testQuery = "select * from tenant_login";
-  $testResults = sqlsrv_query($conn, $testQuery);
-  echo $testResults;
+  $stmt = sqlsrv_query($conn, $testQuery);
+  if ($testResults === false) {
+    die(print_r(sqlsrv_errors(), true));
+  }
 
-  /*$email = $_POST["email"];
-  $pass = $_POST["pass"];
+  while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+    echo "Email: "$row['email'] . " | Password: " . $row['password'] . "<br />";
+  }
 
-  if ($email == "index") {
-    header('Location: index.php');
-    die();
-  } */
+  sqlsrv_free_stmt($stmt);
+
 ?>
