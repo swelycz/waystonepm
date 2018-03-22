@@ -24,8 +24,6 @@
       return ['emails do not match', false];
     } else if ($pass !== $confPass) {
       return ['passwords do not match', false];
-    } else {
-      return [null, true];
     }
 
     $q = "select * from tenant_login where email = '$email'";
@@ -37,9 +35,20 @@
 
     if (!is_null($row)) {
       return ['email is already registered', false];
-    } else {
-      return [null, true];
     }
+    sqlsrv_free_stmt($result);
+    $q = "insert TENANT (FIRSTNAME,MI,LASTNAME,EMAIL) values('$fname','$mi','$lname','$email')";
+    $result = sqlsrv_query($conn, $q);
+    if ($result === false) {
+      die(print_r(sqlsrv_errors(), true));
+    }
+    sqlsrv_free_stmt($result);
+    $q = "insert tenant_login (email, password) values('$email','$pass')";
+    $result = sqlsrv_query($conn, $q);
+    if ($result === false) {
+      die(print_r(sqlsrv_errors(), true));
+    }
+    return [null, true];
   }
 
   list($msg, $success) = signupUser($conn);
@@ -53,7 +62,7 @@
     $location = 'loginSignup.php';
   }
   echo $_SESSION['msg'];
-  //sqlsrv_free_stmt($result);
+
   //header("Location: $location");
 
   ?>
