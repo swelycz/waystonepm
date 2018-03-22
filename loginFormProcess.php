@@ -22,7 +22,7 @@
 */
   function loginUser(&$conn) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $pass = filter_var($_POST['pass'], FILTER_SANITIZE_SPECIAL_CHARS);
 
     if (empty($email) || empty($pass)) {
       return ['all fields required', false];
