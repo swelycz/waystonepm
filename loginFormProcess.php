@@ -22,7 +22,7 @@
 */
   function loginUser(&$conn) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $pass = filter_var($_POST['pass'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
 
     if (empty($email) || empty($pass)) {
       return ['all fields required', false];
@@ -34,13 +34,13 @@
       die(print_r(sqlsrv_errors(), true));
     }
     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
-    var_dump($row);
-    if (!$result) {
-      return [$conn->error, false];
-    } elseif ($result->num_rows !== 1) {
-      return ['problem logging in', false];
+
+    if (is_null($row)) {
+      return ['email is not registered', false];
+    } else if ($row['password'] !== $pass) {
+      return ['password is not correct', false];
     } else {
-      $email = $result->fetch_object();
+      return [null, true];
     }
   }
 
@@ -54,7 +54,7 @@
     $location = 'loginSignup.php';
   }
 
-  //sqlsrv_free_stmt($result);
-  //header("Location: $location");
+  sqlsrv_free_stmt($result);
+  header("Location: $location");
 
 ?>
