@@ -7,7 +7,7 @@
     </div>
     <div id = 'loginModule'>
       <div class = "logSignTitle">Login</div>
-      <form class = "loginForm" name="loginForm" id="loginForm" method="post">
+      <form class = "loginForm" name="loginForm" id="loginForm" action="loginFormProcess.php" method="post">
         <input type="text" name="email" id="email" placeholder="Email Address" maxlength="64" autofocus>
         <input type="password" name="password" id="pass" placeholder="Password" maxlength="32">
         <button type="submit" class = "loginButton"></button>
