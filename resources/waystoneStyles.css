@@ -929,6 +929,12 @@ footer ul li a {
 .validate:after {
 	content:"✓ MESSAGE SENT";
 }
+/* script div settings */
+.scriptsWrapper, #scriptsContainer {
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
 /* keyframes */
 @keyframes rotating {
   from {

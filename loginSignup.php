@@ -5,6 +5,11 @@
       <div id = "loginModuleButton" class = "focused">Login</div>
       <div id = "signupModuleButton" class = "unfocused">Sign Up</div>
     </div>
+    <div class = "scriptsWrapper">
+      <div id="scriptsContainer">
+        <script> var emailInput=document.querySelector('#email'); function checkEmail(email){var re=/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/; return re.test(email);}function validateEmail(){var email=emailInput.value; if (!checkEmail(email)){$('#email').css('border-color','#ff0000'); $('#email').css('box-shadow','0 0 10px #ff0000'); $('#emailValidationMsg').css('visibility','visible'); return false;}else{$('#email').css('border-color',''); $('#email').css('box-shadow',''); $('#emailValidationMsg').css('visibility',''); return true;}}emailInput.addEventListener('input', function(){validateEmail();}); </script>
+      </div>
+    </div>
     <div id = 'loginModule'>
       <div class = "logSignTitle">Login</div>
       <form class = "loginForm" name="loginForm" id="loginForm" action="loginFormProcess.php" method="post">
