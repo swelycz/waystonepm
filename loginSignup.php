@@ -10,7 +10,7 @@
       <form class = "loginForm" name="loginForm" id="loginForm" action="loginFormProcess.php" method="post">
         <input type="text" name="email" id="email" placeholder="Email Address" maxlength="64" autofocus required>
         <input type="password" name="password" id="password" placeholder="Password" maxlength="32" required>
-        <button type="submit" id="validate" class = "loginButton"></button>
+        <button type="submit" class = "loginButton"></button>
       </form>
     </div>
   </div>

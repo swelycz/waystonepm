@@ -106,11 +106,11 @@ $(document).ready(function() {
     var email = input.value;
 
     if (validateEmail(email)) {
-      $("#email").css("border-color":"#14ff00");
-      $("#email").css("box-shadow":"0 0 10px #14ff00");
+      $("#email").css("border-color","#14ff00");
+      $("#email").css("box-shadow","0 0 10px #14ff00");
     } else {
-      $("#email").css("border-color":"#ff0000");
-      $("#email").css("box-shadow":"0 0 10px #ff0000");
+      $("#email").css("border-color","#ff0000");
+      $("#email").css("box-shadow","0 0 10px #ff0000");
     }
     return false;
   }
@@ -118,8 +118,5 @@ $(document).ready(function() {
   {
     validate();
   });
-
-
-$("#validate").bind("click", validate);
   $("#DOB").datepicker();
 });
