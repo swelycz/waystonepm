@@ -6,29 +6,6 @@
       <div id = "signupModuleButton" class = "unfocused">Sign Up</div>
     </div>
     <div id = 'loginModule'>
-      <script>
-        $('#loginForm').on('submit', function (e) {
-          e.preventDefault();
-          $.ajax({
-            type: 'post',
-            url: 'loginFormProcess.php',
-            data: $('#loginForm').serialize()
-          });
-          console.log($('#loginForm').serialize());
-        });
-        $(".loginButton").click(function() {
-          if (!$(".loginButton").hasClass("validate")) {
-            $(".loginButton").addClass("onclic", 250);
-            validateLogin();
-          }
-        });
-        function validateLogin() {
-          setTimeout(function() {
-            $(".loginButton").removeClass("onclic");
-            $(".loginButton").addClass("validate", 450);
-          }, 2250);
-        }
-      </script>
       <div class = "logSignTitle">Login</div>
       <form class = "loginForm" name="loginForm" id="loginForm" method="post">
         <input type="text" name="email" id="email" placeholder="Email Address" maxlength="64" autofocus>
