@@ -80,7 +80,7 @@ $(document).ready(function() {
       validateContact();
     }
   });
-  function validateContact() {
+  function validateSignup() {
     var fname = $("#fname").value;
     var mi = $("#mIni").value;
     var lname = $("#lname").value;
@@ -101,7 +101,7 @@ $(document).ready(function() {
   $(".submitContactButton").click(function() {
     if (!$(".submitContactButton").hasClass("validate")) {
       $(".submitContactButton").addClass("onclic", 250);
-      validateContact();
+      validateSignup();
     }
   });
   function validateContact() {
