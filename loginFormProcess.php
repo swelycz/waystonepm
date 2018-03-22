@@ -30,8 +30,11 @@
 
     $q = "select * from tenant_login where email = '$email'";
     $result = sqlsrv_query($conn, $q);
-
-    var_dump($result);
+    if ($stmt === false) {
+      die(print_r(sqlsrv_errors(), true));
+    }
+    $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC;
+    var_dump($row);
     if (!$result) {
       return [$conn->error, false];
     } elseif ($result->num_rows !== 1) {
