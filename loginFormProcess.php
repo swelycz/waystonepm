@@ -15,7 +15,7 @@
   }
 
   while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-    echo "Email: "$row['email'] . " | Password: " . $row['password'] . "<br />";
+    echo "Email: " . $row['email'] . " | Password: " . $row['password'] . "<br />";
   }
 
   sqlsrv_free_stmt($stmt);
