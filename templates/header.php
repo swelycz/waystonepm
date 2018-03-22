@@ -43,12 +43,12 @@
             <div class = "logsignWhitespace"></div>
             <div class = "logSignContainer">
               <div class = "login boxEffect">Login
-                <a href = "loginSignup.php">
+                <a href = "https://waystonepm-tenantportal.azurewebsites.net">
       						<span class = "link-spanner"></span>
       					</a>
               </div>
               <div class = "signup boxEffect">Sign Up
-                <a href = "loginSignup.php">
+                <a href = "https://waystonepm-tenantportal.azurewebsites.net">
       						<span class = "link-spanner"></span>
       					</a>
               </div>

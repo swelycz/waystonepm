@@ -126,5 +126,6 @@ $(document).ready(function() {
     validateEmail();
   });
 
+  $("#phone").mask("(000) 000-0000");
 
 });
