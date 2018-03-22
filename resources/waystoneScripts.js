@@ -51,7 +51,7 @@ $(window).scroll(function(){
 $(document).ready(function() {
 
   var $loginModule = "<div id = 'loginModule'><div class = 'logSignTitle'>Login</div><form class = 'loginForm' name='loginForm' id='loginForm' action='loginFormProcess.php' method='post'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64'><input type='password' name='password' id='password' placeholder='Password' maxlength='32'><button type='submit' class = 'loginButton'></button></form></div>";
-  var $signupModule = "<div id = 'signupModule'><div class = 'logSignTitle'>Sign Up</div><form class = 'signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'><div class = 'signupFormInputs'><input type='text' name='fname' id='fname' placeholder='First  Name' maxlength='32' required><input type='text' name='mIni' id='mIni' placeholder='MI' maxlength='1' required><input type='text' name='lname' id='lname' placeholder='Last Name' maxlength='32' required></div><div class='signupFormInputs'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64' required><input type='text' name='confEmail' id='confEmail' placeholder='Confirm Email' maxlength='64' required></div><div class='signupFormInputs'><input type='password' name='password' id='password' placeholder='Password' maxlength='32' required><input type='password' name='confPass' id='confPass' placeholder='Confirm Password' maxlength='32' required></div><button type='submit' class = 'signupButton'></button></form></div>";
+  var $signupModule = "<div id = 'signupModule'><script>$('.signupButton').click(function() {if (!$('.signupButton').hasClass("validate")) {$('.signupButton').addClass('onclic', 250); validateSignup();}}); function validateSignup() {var fname = $('#fname').value; var mi = $('#mIni').value; var lname = $('#lname').value; var email = $('#email').value; var confEmail = ('#confEmail').value; var pass = $('#password').value; var confPass = ('#confPass').value; setTimeout(function() {if (fname == null || fname == '',mi == null || mi == '',lname == null || lname == '',email == null || email == '',confEmail == null || confEmail == '',pass == null || pass == '',confPass == null || confPass == '') { $('.signupButton').removeClass('onclic');} else { $('.signupButton').removeClass('onclic'); $('.signupButton').addClass('validate', 450);}}, 2250);}</script><div class = 'logSignTitle'>Sign Up</div><form class = 'signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'><div class = 'signupFormInputs'><input type='text' name='fname' id='fname' placeholder='First  Name' maxlength='32' required><input type='text' name='mIni' id='mIni' placeholder='MI' maxlength='1' required><input type='text' name='lname' id='lname' placeholder='Last Name' maxlength='32' required></div><div class='signupFormInputs'><input type='text' name='email' id='email' placeholder='Email Address' maxlength='64' required><input type='text' name='confEmail' id='confEmail' placeholder='Confirm Email' maxlength='64' required></div><div class='signupFormInputs'><input type='password' name='password' id='password' placeholder='Password' maxlength='32' required><input type='password' name='confPass' id='confPass' placeholder='Confirm Password' maxlength='32' required></div><button type='submit' class = 'signupButton'></button></form></div>";
   $("#loginModuleButton").click(function() {
     if (!$("#loginModuleButton").hasClass("focused")) {
       $("#signupModule").remove();
@@ -74,29 +74,7 @@ $(document).ready(function() {
       $("#loginModuleButton").addClass("unfocused");
     }
   });
-  $(".signupButton").click(function() {
-    if (!$(".signupButton").hasClass("validate")) {
-      $(".signupButton").addClass("onclic", 250);
-      validateSignup();
-    }
-  });
-  function validateSignup() {
-    var fname = $("#fname").value;
-    var mi = $("#mIni").value;
-    var lname = $("#lname").value;
-    var email = $("#email").value;
-    var confEmail = ("#confEmail").value;
-    var pass = $("#password").value;
-    var confPass = ("#confPass").value;
-    setTimeout(function() {
-      if (fname == null || fname == "",mi == null || mi == "",lname == null || lname == "",email == null || email == "",confEmail == null || confEmail == "",pass == null || pass == "",confPass == null || confPass == "") {
-        $(".signupButton").removeClass("onclic");
-      } else {
-        $(".signupButton").removeClass("onclic");
-        $(".signupButton").addClass("validate", 450);
-      }
-    }, 2250);
-  }
+
 
   $(".submitContactButton").click(function() {
     if (!$(".submitContactButton").hasClass("validate")) {
