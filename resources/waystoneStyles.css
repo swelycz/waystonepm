@@ -595,8 +595,14 @@ nav ul li {
 	height: 30px;
 	font-size: 18px;
 	letter-spacing: 1px;
-	margin-top: 30px;
+	margin-top: 15px;
 	transition: all .25s;
+}
+#emailValidationMsg {
+	font-size: 14px;
+	color: #cb0000;
+	font-family: var(--p-font);
+	visibility: hidden;
 }
 .loginButton {
 	margin-top: 70px;
