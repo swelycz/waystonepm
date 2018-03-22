@@ -48,8 +48,10 @@
   $_SESSION['msg'] = $msg;
   $_SESSION['email'] = $email;
 
+
   if ($success) {
     $location = 'accountPage.php';
+    $_SESSION['loggedin'] = true;
   } else {
     $location = 'loginSignup.php';
   }

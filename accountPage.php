@@ -1,5 +1,5 @@
 <?php include("templates/header.php");
-  if (is_null($_SESSION['email'])) {
+  if (!$_SESSION['loggedin']) {
     header("Location: index.php");
   }
 ?>
