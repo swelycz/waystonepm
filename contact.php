@@ -1,4 +1,12 @@
 <?php	include("templates/header.php") ?>
+  <div class = "contactSideNav">
+    <div class = "topPageButton"></div>
+    <div>Miami</div>
+    <div>New York</div>
+    <div>Chicago</div>
+    <div>Las Vegas</div>
+    <div>Los Angeles</div>
+  </div>
   <div class="contactFormPannelBackground">
     <div class="contactFormPannel">
       <div class = "pageTitle"><p>Contact</p></div>
@@ -48,8 +56,8 @@
       </div>
     </div>
   </div>
-  <div class = "separator separatorNewyork"></div>
-  <div id = "newyork" class="contentPannel contactPannel">
+  <div id = "newyork" class = "separator separatorNewyork"></div>
+  <div class="contentPannel contactPannel">
     <div class = "pageTitle"><p>New York</p></div>
     <div class = "contactBoxWrapper">
       <div class = "contactBoxContainer">

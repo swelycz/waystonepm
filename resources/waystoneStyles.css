@@ -347,6 +347,29 @@ nav ul li {
 	flex-direction: column;
 	justify-content: center;
 }
+.contactSideNav {
+	width: 600px;
+	height: 50px;
+	top: 200px;
+	transform: rotate(90deg);
+	transform-origin: left;
+	left: 25px;
+	position: fixed;
+	background: red;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+}
+.contactSideNav div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18%;
+	height: 100%;
+}
+.topPageButton {
+	width: 10%;
+}
 .contactFormPannelBackground {
 	background: url("../images/miami-beach-blur.png") 100% no-repeat;
 	background-size: 100%;
@@ -814,6 +837,12 @@ footer ul li a {
 	}
 	.contactFormPannelBackground {
 		height: 625px;
+	}
+	.contactFormInputs {
+		margin-bottom: 10px;
+	}
+	.contactForm input[type=text], .contactForm input[type=email] {
+		margin-top: 0;
 	}
 }
 /* Submit Button */
