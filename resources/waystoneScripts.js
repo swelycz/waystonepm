@@ -154,9 +154,9 @@ $(document).ready(function() {
   }
   emailInput.addEventListener('input', function(){
     validateEmail();
-  });  
+  });
   $('#zip').mask('00000');
-  $('#phone').mask('(000) 000-0000');
+  $('#phone').mask('000-000-0000');
   for (i=new Date().getFullYear(); i > 1900; i--){
     $('#years').append($('<option/>').val(i).html(i));
   }
@@ -218,7 +218,6 @@ $(document).ready(function() {
       return true;
     }
   }
-
   $("#topScroll").click(function() {
     $('html, body').animate({
       scrollTop: 0,

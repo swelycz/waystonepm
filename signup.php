@@ -117,7 +117,7 @@
         </div>
         <div class='signupFormInputs'>
           <input type='text' name='zip' id='zip' placeholder='Zip Code' maxlength='5' required>
-          <input type='text' name='phone' id='phone' placeholder='Phone Number' maxlength='14' required>
+          <input type='text' name='phone' id='phone' placeholder='Phone Number' maxlength='12' required>
           <p class='dobLabel'>Date of Birth:</p>
           <select name='years' id='years' required></select>
           <select name='months' id='months' required></select>
