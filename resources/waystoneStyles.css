@@ -365,7 +365,7 @@ nav ul li {
 	display: flex;
 	align-items: center;
 	background-color: #FFF;
-	border: 2px solid #000;
+	border-top: 3px solid var(--dark-blue);
 }
 .contactSideNav div:active {
 	background-color: none;
@@ -374,6 +374,7 @@ nav ul li {
 	background-color: rgb(200, 200, 200);
 }
 .contactSideNav div {
+	color: var(--dark-blue);
 	display: flex;
 	align-items: center;
 	justify-content: center;

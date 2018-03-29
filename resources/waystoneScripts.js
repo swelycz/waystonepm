@@ -153,50 +153,8 @@ $(document).ready(function() {
     }
   }
   emailInput.addEventListener('input', function(){
-    validateEmail();compareEmails();
-  });
-  var confEmailInput=document.querySelector('#confEmail');
-  function compareEmails(){
-    var email=emailInput.value;
-    var confEmail=confEmailInput.value;
-    if (confEmail !==email){
-      $('#confEmail').css('border-color','#ff0000');
-      $('#confEmail').css('box-shadow','0 0 10px #ff0000');
-      $('#confEmailValidationMsg').css('visibility','visible');
-      return false;
-    } else {
-      $('#confEmail').css('border-color','');
-      $('#confEmail').css('box-shadow','');
-      $('#confEmailValidationMsg').css('visibility','');
-      return true;
-    }
-  }
-  confEmailInput.addEventListener('input', function(){
-    compareEmails();
-  });
-  var passInput=document.querySelector('#password');
-  var confPassInput=document.querySelector('#confPass');
-  function comparePass(){
-    var pass=passInput.value;
-    var confPass=confPassInput.value;
-    if (confPass !==pass){
-      $('#confPass').css('border-color','#ff0000');
-      $('#confPass').css('box-shadow','0 0 10px #ff0000');
-      $('#confPassValidationMsg').css('visibility','visible');
-      return false;
-    } else {
-      $('#confPass').css('border-color','');
-      $('#confPass').css('box-shadow','');
-      $('#confPassValidationMsg').css('visibility','');
-      return true;
-    }
-  }
-  confPassInput.addEventListener('input', function(){
-    comparePass();
-  });
-  passInput.addEventListener('input', function(){
-    comparePass();
-  });
+    validateEmail();
+  });  
   $('#zip').mask('00000');
   $('#phone').mask('(000) 000-0000');
   for (i=new Date().getFullYear(); i > 1900; i--){
@@ -260,9 +218,6 @@ $(document).ready(function() {
       return true;
     }
   }
-  emailInput.addEventListener('input', function() {
-    validateEmail();
-  });
 
   $("#topScroll").click(function() {
     $('html, body').animate({

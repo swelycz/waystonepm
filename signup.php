@@ -4,6 +4,53 @@
     <div class = "logSignButtonsContainer">
       <div id = "signupModuleButton" class = "unfocused">Sign Up</div>
     </div>
+    <script>
+      var passInput=document.querySelector('#password');
+      var confPassInput=document.querySelector('#confPass');
+      function comparePass(){
+        var pass=passInput.value;
+        var confPass=confPassInput.value;
+        if (confPass !==pass){
+          $('#confPass').css('border-color','#ff0000');
+          $('#confPass').css('box-shadow','0 0 10px #ff0000');
+          $('#confPassValidationMsg').css('visibility','visible');
+          return false;
+        } else {
+          $('#confPass').css('border-color','');
+          $('#confPass').css('box-shadow','');
+          $('#confPassValidationMsg').css('visibility','');
+          return true;
+        }
+      }
+      confPassInput.addEventListener('input', function(){
+        comparePass();
+      });
+      passInput.addEventListener('input', function(){
+        comparePass();
+      });
+      emailInput.addEventListener('input', function(){
+        validateEmail();compareEmails();
+      });
+      var confEmailInput=document.querySelector('#confEmail');
+      function compareEmails(){
+        var email=emailInput.value;
+        var confEmail=confEmailInput.value;
+        if (confEmail !==email){
+          $('#confEmail').css('border-color','#ff0000');
+          $('#confEmail').css('box-shadow','0 0 10px #ff0000');
+          $('#confEmailValidationMsg').css('visibility','visible');
+          return false;
+        } else {
+          $('#confEmail').css('border-color','');
+          $('#confEmail').css('box-shadow','');
+          $('#confEmailValidationMsg').css('visibility','');
+          return true;
+        }
+      }
+      confEmailInput.addEventListener('input', function(){
+        compareEmails();
+      });
+    </script>
     <div id='signupModule'>
       <form class='signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'>
         <div class='signupFormInputs'>
