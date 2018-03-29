@@ -1,11 +1,31 @@
 <?php	include("templates/header.php") ?>
   <div class = "contactSideNav">
     <div class = "topPageButton"></div>
-    <div>Miami</div>
-    <div>New York</div>
-    <div>Chicago</div>
-    <div>Las Vegas</div>
-    <div>Los Angeles</div>
+    <div>Miami
+      <a href = "#miami">
+        <span class = "link-spanner"></span>
+      </a>
+    </div>
+    <div>New York
+      <a href = "#newyork">
+        <span class = "link-spanner"></span>
+      </a>
+    </div>
+    <div>Chicago
+      <a href = "#chicago">
+        <span class = "link-spanner"></span>
+      </a>
+    </div>
+    <div>Las Vegas
+      <a href = "#vegas">
+        <span class = "link-spanner"></span>
+      </a>
+    </div>
+    <div>Los Angeles
+      <a href = "#losAngeles">
+        <span class = "link-spanner"></span>
+      </a>
+    </div>
   </div>
   <div class="contactFormPannelBackground">
     <div class="contactFormPannel">
@@ -28,8 +48,9 @@
         </div>
       </form>
     </div>
+    <div id = "miami"></div>
   </div>
-  <div id = "miami" class = "contentPannel contactPannel">
+  <div class = "contentPannel contactPannel">
     <div class = "pageTitle"><p>Miami</p></div>
     <div class = "contactBoxWrapper">
       <div class = "contactBoxContainer">
@@ -84,8 +105,8 @@
       </div>
     </div>
   </div>
-  <div class = "separator separatorChicago"></div>
-  <div id = "chicago" class="contentPannel contactPannel">
+  <div id = "chicago" class = "separator separatorChicago"></div>
+  <div class="contentPannel contactPannel">
     <div class = "pageTitle"><p>Chicago</p></div>
     <div class = "contactBoxWrapper">
       <div class = "contactBoxContainer">
@@ -112,8 +133,8 @@
       </div>
     </div>
   </div>
-  <div class = "separator separatorVegas"></div>
-  <div id = "vegas" class="contentPannel contactPannel">
+  <div id = "vegas" class = "separator separatorVegas"></div>
+  <div class="contentPannel contactPannel">
     <div class = "pageTitle"><p>Las Vegas</p></div>
     <div class = "contactBoxWrapper">
       <div class = "contactBoxContainer">
@@ -140,8 +161,8 @@
       </div>
     </div>
   </div>
-  <div class = "separator separatorLosangeles"></div>
-  <div id = "losAngeles" class="contentPannel contactPannel">
+  <div id = "losAngeles" class = "separator separatorLosangeles"></div>
+  <div class="contentPannel contactPannel">
     <div class = "pageTitle"><p>Los Angeles</p></div>
     <div class = "contactBoxWrapper">
       <div class = "contactBoxContainer">

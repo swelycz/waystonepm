@@ -346,6 +346,7 @@ nav ul li {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	height: 800px;
 }
 .contactSideNav {
 	width: 600px;
@@ -366,6 +367,7 @@ nav ul li {
 	justify-content: center;
 	width: 18%;
 	height: 100%;
+	position: relative;
 }
 .topPageButton {
 	width: 10%;
