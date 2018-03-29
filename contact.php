@@ -1,29 +1,33 @@
 <?php	include("templates/header.php") ?>
   <div class = "contactSideNav">
-    <div class = "topPageButton"></div>
+    <div class = "topPageButton">
+      <a>
+        <span id="topScroll" class = "link-spanner"></span>
+      </a>
+    </div>
     <div>Miami
-      <a href = "#miami">
-        <span class = "link-spanner"></span>
+      <a>
+        <span id="miamiScroll" class = "link-spanner"></span>
       </a>
     </div>
     <div>New York
-      <a href = "#newyork">
-        <span class = "link-spanner"></span>
+      <a>
+        <span id="newyorkScroll" class = "link-spanner"></span>
       </a>
     </div>
     <div>Chicago
-      <a href = "#chicago">
-        <span class = "link-spanner"></span>
+      <a>
+        <span id="chicagoScroll" class = "link-spanner"></span>
       </a>
     </div>
     <div>Las Vegas
-      <a href = "#vegas">
-        <span class = "link-spanner"></span>
+      <a>
+        <span id="vegasScroll" class = "link-spanner"></span>
       </a>
     </div>
     <div>Los Angeles
-      <a href = "#losAngeles">
-        <span class = "link-spanner"></span>
+      <a>
+        <span id="losAngelesScroll" class = "link-spanner"></span>
       </a>
     </div>
   </div>

@@ -42,13 +42,13 @@
           <div class="logSignOverlay">
             <div class = "logsignWhitespace"></div>
             <div class = "logSignContainer">
-              <div class = "login boxEffect">Login
-                <a href = "https://waystonepm-tenantportal.azurewebsites.net">
+              <div class = "login boxEffect">Tenant Portal
+                <a href = "https://waystonepm-tenantportal.azurewebsites.net" target="_blank">
       						<span class = "link-spanner"></span>
       					</a>
               </div>
               <div class = "signup boxEffect">Sign Up
-                <a href = "https://waystonepm-tenantportal.azurewebsites.net">
+                <a href = "signup.php">
       						<span class = "link-spanner"></span>
       					</a>
               </div>
