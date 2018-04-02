@@ -4,53 +4,6 @@
     <div class = "logSignButtonsContainer">
       <div id = "signupModuleButton" class = "unfocused">Sign Up</div>
     </div>
-    <script>
-      var passInput=document.querySelector('#password');
-      var confPassInput=document.querySelector('#confPass');
-      function comparePass(){
-        var pass=passInput.value;
-        var confPass=confPassInput.value;
-        if (confPass !==pass){
-          $('#confPass').css('border-color','#ff0000');
-          $('#confPass').css('box-shadow','0 0 10px #ff0000');
-          $('#confPassValidationMsg').css('visibility','visible');
-          return false;
-        } else {
-          $('#confPass').css('border-color','');
-          $('#confPass').css('box-shadow','');
-          $('#confPassValidationMsg').css('visibility','');
-          return true;
-        }
-      }
-      confPassInput.addEventListener('input', function(){
-        comparePass();
-      });
-      passInput.addEventListener('input', function(){
-        comparePass();
-      });
-      emailInput.addEventListener('input', function(){
-        validateEmail();compareEmails();
-      });
-      var confEmailInput=document.querySelector('#confEmail');
-      function compareEmails(){
-        var email=emailInput.value;
-        var confEmail=confEmailInput.value;
-        if (confEmail !==email){
-          $('#confEmail').css('border-color','#ff0000');
-          $('#confEmail').css('box-shadow','0 0 10px #ff0000');
-          $('#confEmailValidationMsg').css('visibility','visible');
-          return false;
-        } else {
-          $('#confEmail').css('border-color','');
-          $('#confEmail').css('box-shadow','');
-          $('#confEmailValidationMsg').css('visibility','');
-          return true;
-        }
-      }
-      confEmailInput.addEventListener('input', function(){
-        compareEmails();
-      });
-    </script>
     <div id='signupModule'>
       <form class='signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'>
         <div class='signupFormInputs'>
@@ -135,10 +88,109 @@
         </div>
         <div class='signupFormInputs'>
           <input type='password' name='password' id='password' placeholder='Password' maxlength='32' required>
-          <input type='password' name='confPass' id='confPass' placeholder='Confirm Password' maxlength='32' required>
+          <input type='password' name='confPass' id='confPassword' placeholder='Confirm Password' maxlength='32' required>
         </div>
         <button type='submit' class='signupButton'></button>
       </form>
+      <script>
+        var passInput=document.querySelector('#password');
+        var confPassInput=document.querySelector('#confPassword');
+        function comparePass(){
+          var pass=passInput.value;
+          var confPass=confPassInput.value;
+          if (confPass !==pass){
+            $('#confPassword').css('border-color','#ff0000');
+            $('#confPassword').css('box-shadow','0 0 10px #ff0000');
+            $('#confPassValidationMsg').css('visibility','visible');
+            return false;
+          } else {
+            $('#confPassword').css('border-color','');
+            $('#confPassword').css('box-shadow','');
+            $('#confPassValidationMsg').css('visibility','');
+            return true;
+          }
+        }
+        function passInputListen() {
+          passInput.addEventListener('input', function(){
+            comparePass();
+          });
+        }
+        function confPassInputListen() {
+          //if (confPassInput !== null) {
+            confPassInput.addEventListener('input', function(){
+              comparePass();
+            });
+          //}
+        }
+        var emailInput = document.getElementById('email');
+        var confEmailInput=document.getElementById('confEmail');
+        function compareEmails(){
+          var email=emailInput.value;
+          var confEmail=confEmailInput.value;
+          if (confEmail !==email){
+            $('#confEmail').css('border-color','#ff0000');
+            $('#confEmail').css('box-shadow','0 0 10px #ff0000');
+            $('#confEmailValidationMsg').css('visibility','visible');
+            return false;
+          } else {
+            $('#confEmail').css('border-color','');
+            $('#confEmail').css('box-shadow','');
+            $('#confEmailValidationMsg').css('visibility','');
+            return true;
+          }
+        }
+        function checkEmail(email){
+          var re=/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
+          return re.test(email);
+        }
+        function validateEmail(){
+          var email=emailInput.value;
+          if (!checkEmail(email)){
+            $('#email').css('border-color','#ff0000');
+            $('#email').css('box-shadow','0 0 10px #ff0000');
+            $('#emailValidationMsg').css('visibility','visible');
+            return false;
+          } else {
+            $('#email').css('border-color','');
+            $('#email').css('box-shadow','');
+            $('#emailValidationMsg').css('visibility','');
+            return true;
+          }
+        }
+        if (emailInput !== null) {
+          emailInput.addEventListener('input', function(){
+            validateEmail();
+            compareEmails();
+          });
+        }
+        if (confEmailInput !== null) {
+          confEmailInput.addEventListener('input', function(){
+            compareEmails();
+          });
+        }
+        for (i=new Date().getFullYear(); i > 1900; i--){
+          $('#years').append($('<option/>').val(i).html(i));
+        }
+        for (i=1; i < 13; i++){
+          $('#months').append($('<option/>').val(i).html(i));
+        }
+        updateNumberOfDays();
+        $('#years, #months').change(function(){
+          updateNumberOfDays();
+        });
+        function updateNumberOfDays(){
+          $('#days').html('');
+          month=$('#months').val();
+          year=$('#years').val();
+          days=daysInMonth(month, year);
+          for(i=1; i < days+1 ; i++){
+            $('#days').append($('<option/>').val(i).html(i));
+          }
+        }
+        function daysInMonth(month, year){
+          return new Date(year, month, 0).getDate();
+        }
+      </script>
     </div>
   </div>
 </div>

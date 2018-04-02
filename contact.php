@@ -39,10 +39,14 @@
           <input type="text" id="fname" name="firstName" maxlength="32" placeholder="First Name" required>
           <input type="text" id="lname" name="lastName"maxlength="32" placeholder="Last Name" required>
         </div>
-        <p id="emailValidationMsg">Email entered is not valid</p>
         <div class = "contactFormInputs">
-          <input type="email" id="email" name="email" maxlength="64" placeholder="Email Address" required>
-          <input type="text" id="phone" name="phone" maxlength="14" placeholder="Phone Number" required>
+          <div class = "emailContainer">
+            <p id="emailValidationMsg">Email entered is not valid</p>
+            <input type="email" id="email" name="email" maxlength="64" placeholder="Email Address" required>
+          </div>
+          <div class="phoneContainer">
+            <input type="text" id="phone" name="phone" maxlength="14" placeholder="Phone Number" required>
+          </div>
         </div>
         <div class="contactFormInputs">
           <textarea id="message" cols="30" rows="5" name="message" placeholder="Optional message..." ></textarea>
@@ -51,6 +55,30 @@
           <button type="submit" class = "submitContactButton"></button>
         </div>
       </form>
+      <script>
+        var emailInput = document.querySelector('#email');
+        function checkEmail(email) {
+          var re = /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
+          return re.test(email);
+        }
+        function validateEmail() {
+          var email = emailInput.value;
+          if (!checkEmail(email)) {
+            $("#email").css("border-color","#ff0000");
+            $("#email").css("box-shadow","0 0 10px #ff0000");
+            $("#emailValidationMsg").css("visibility","visible");
+            return false;
+          } else {
+            $("#email").css("border-color",'');
+            $("#email").css("box-shadow",'');
+            $("#emailValidationMsg").css("visibility",'');
+            return true;
+          }
+        }
+        emailInput.addEventListener('input', function(){
+          validateEmail();
+        });
+      </script>
     </div>
     <div id = "miami"></div>
   </div>

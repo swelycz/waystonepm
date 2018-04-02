@@ -111,74 +111,10 @@ $(document).ready(function() {
         $('.signupButton').addClass('validate', 450);
       }
     }, 2250);
-  }
-  var emailInput=document.querySelector('#email');
-  function checkEmail(email){
-    var re=/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
-    return re.test(email);
-  }
-  function validateEmail(){
-    var email=emailInput.value;
-    if (!checkEmail(email)){
-      $('#email').css('border-color','#ff0000');
-      $('#email').css('box-shadow','0 0 10px #ff0000');
-      $('#emailValidationMsg').css('visibility','visible');
-      return false;
-    } else {
-      $('#email').css('border-color','');
-      $('#email').css('box-shadow','');
-      $('#emailValidationMsg').css('visibility','');
-      return true;
-    }
-  }
-  emailInput.addEventListener('input', function(){validateEmail();compareEmails();
-  });
-  var emailInput=document.querySelector('#email');
-  function checkEmail(email){
-    var re=/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
-    return re.test(email);
-  }
-  function validateEmail(){
-    var email=emailInput.value;
-    if (!checkEmail(email)){
-      $('#email').css('border-color','#ff0000');
-      $('#email').css('box-shadow','0 0 10px #ff0000');
-      $('#emailValidationMsg').css('visibility','visible');
-      return false;
-    } else {
-      $('#email').css('border-color','');
-      $('#email').css('box-shadow','');
-      $('#emailValidationMsg').css('visibility','');
-      return true;
-    }
-  }
-  emailInput.addEventListener('input', function(){
-    validateEmail();
-  });
+  }  
   $('#zip').mask('00000');
   $('#phone').mask('000-000-0000');
-  for (i=new Date().getFullYear(); i > 1900; i--){
-    $('#years').append($('<option/>').val(i).html(i));
-  }
-  for (i=1; i < 13; i++){
-    $('#months').append($('<option/>').val(i).html(i));
-  }
-  updateNumberOfDays();
-  $('#years, #months').change(function(){
-    updateNumberOfDays();
-  });
-  function updateNumberOfDays(){
-    $('#days').html('');
-    month=$('#months').val();
-    year=$('#years').val();
-    days=daysInMonth(month, year);
-    for(i=1; i < days+1 ; i++){
-      $('#days').append($('<option/>').val(i).html(i));
-    }
-  }
-  function daysInMonth(month, year){
-    return new Date(year, month, 0).getDate();
-  }
+
   $(".submitContactButton").click(function() {
     if (!$(".submitContactButton").hasClass("validate")) {
       $(".submitContactButton").addClass("onclic", 250);
@@ -199,59 +135,35 @@ $(document).ready(function() {
       }
     }, 2250);
   }
-  var emailInput = document.querySelector('#email');
-  function checkEmail(email) {
-    var re = /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
-    return re.test(email);
-  }
-  function validateEmail() {
-    var email = emailInput.value;
-    if (!checkEmail(email)) {
-      $("#email").css("border-color","#ff0000");
-      $("#email").css("box-shadow","0 0 10px #ff0000");
-      $("#emailValidationMsg").css("visibility","visible");
-      return false;
-    } else {
-      $("#email").css("border-color",'');
-      $("#email").css("box-shadow",'');
-      $("#emailValidationMsg").css("visibility",'');
-      return true;
-    }
-  }
+
   $("#topScroll").click(function() {
     $('html, body').animate({
-      scrollTop: 0,
-      scrollLeft: 0
+      scrollTop: 0
     }, 700);
   });
   $("#miamiScroll").click(function() {
     $('html, body').animate({
-      scrollTop: 760,
-      scrollLeft: 0
+      scrollTop: $("#miami").offset().top
     }, 700);
   });
   $("#newyorkScroll").click(function() {
     $('html, body').animate({
-      scrollTop: 1634,
-      scrollLeft: 0
+      scrollTop: $("#newyork").offset().top
     }, 700);
   });
   $("#chicagoScroll").click(function() {
     $('html, body').animate({
-      scrollTop: 2509,
-      scrollLeft: 0
+      scrollTop: $("#chicago").offset().top
     }, 700);
   });
   $("#vegasScroll").click(function() {
     $('html, body').animate({
-      scrollTop: 3384,
-      scrollLeft: 0
+      scrollTop: $("#vegas").offset().top
     }, 700);
   });
   $("#losAngelesScroll").click(function() {
     $('html, body').animate({
-      scrollTop: 4259,
-      scrollLeft: 0
+      scrollTop: $("#losAngeles").offset().top
     }, 700);
   });
 });

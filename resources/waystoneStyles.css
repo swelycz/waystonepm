@@ -442,8 +442,8 @@ nav ul li {
 	letter-spacing: 2px;
 	transition: all .25s;
 }
-.contactForm #emailValidationMsg {
-	margin-left: 370px;
+.phoneContainer {
+	padding-top: 18px;
 }
 .contactFormInputs {
 	width: 100%;
@@ -665,6 +665,10 @@ nav ul li {
 	color: var(--red);
 	margin-left: 250px;
 }
+#confPassword {
+	box-shadow: none;
+	border-color: inherit;
+}
 .loginButton {
 	margin-top: 50px;
 }
@@ -866,6 +870,18 @@ footer ul li a {
 	.contactForm input[type=text], .contactForm input[type=email] {
 		margin-top: 0;
 	}
+	.contactSideNav div {
+		padding: 0 12.39px;
+	}
+	.contactSideNav {
+		width: 475px;
+		height: 40px;
+		top: 110px;
+		left: 20px;
+	}
+	.contactPannel {
+		height: 550px;
+	}
 }
 /* Submit Button */
 .buttonContainer {
@@ -1024,4 +1040,10 @@ footer ul li a {
   top: 0;
   left: 0;
   z-index: 1;
+}
+.emailContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
