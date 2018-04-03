@@ -56,7 +56,7 @@
 
     $DOB = $year . "-" . $month . "-" . $day; // combine year, month, and day variables into one
     sqlsrv_free_stmt($result); // free up the $result variable
-    $q = "insert TENANT (FIRSTNAME,MI,LASTNAME,PERM_ADDRESS,PERM_STATE,PERM_ZIP,PHONE,EMAIL,DOB) values('$fname','$mi','$lname','$address','$state','$zip','$phone','$email','$DOB')"; // prepare query
+    $q = "insert TENANT (FIRSTNAME,MI,LASTNAME,PERM_ADDRESS,PERM_CITY,PERM_STATE,PERM_ZIP,PHONE,EMAIL,DOB) values('$fname','$mi','$lname','$address','$city','$state','$zip','$phone','$email','$DOB')"; // prepare query
     $result = sqlsrv_query($conn, $q); // query database and set equal to $result
     if ($result === false) { // check for connection/process errors
       die(print_r(sqlsrv_errors(), true)); // print errors
