@@ -116,7 +116,7 @@
           });
         }
         function confPassInputListen() {
-          //if (confPassInput !== null) {
+          //if (confPassInput !== null) { // Was experimenting solutions
             confPassInput.addEventListener('input', function(){
               comparePass();
             });
