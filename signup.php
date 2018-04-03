@@ -168,7 +168,7 @@
             compareEmails();
           });
         }
-        for (i=new Date().getFullYear(); i > 1900; i--){
+        for (i=(new Date().getFullYear()) - 18; i > 1900; i--){
           $('#years').append($('<option/>').val(i).html(i));
         }
         for (i=1; i < 13; i++){
