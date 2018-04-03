@@ -20,9 +20,9 @@
       return ['all fields required', false];
     }
     if (empty($message)) {
-      $q = "insert messages (firstName, lastName, email, phone) values('$fname','$lname','$email','$phone')";
+      $q = "insert CONTACT (FIRSTNAME, LASTNAME, EMAIL, PHONE) values('$fname','$lname','$email','$phone')";
     } else {
-      $q = "insert messages (firstName, lastName, email, phone, message) values('$fname','$lname','$email','$phone','$message')";
+      $q = "insert messages (FIRSTNAME, LASTNAME, EMAIL, PHONE, MESSAGES) values('$fname','$lname','$email','$phone','$message')";
     }
     $result = sqlsrv_query($conn, $q);
     if ($result === false) {
