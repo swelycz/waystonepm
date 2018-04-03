@@ -36,8 +36,8 @@
       <div class = "pageTitle"><p>Contact</p></div>
       <form class="contactForm" id="contactForm" action="contactFormProcess.php" method="post">
         <div class="contactFormInputs">
-          <input type="text" id="fname" name="firstName" maxlength="32" placeholder="First Name" required>
-          <input type="text" id="lname" name="lastName"maxlength="32" placeholder="Last Name" required>
+          <input type="text" id="fname" name="fname" maxlength="32" placeholder="First Name" required>
+          <input type="text" id="lname" name="lname"maxlength="32" placeholder="Last Name" required>
         </div>
         <div class = "contactFormInputs">
           <div class = "emailContainer">
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="contactFormInputs">
-          <textarea id="message" cols="30" rows="5" name="message" placeholder="Optional message..." ></textarea>
+          <textarea id="message" cols="30" rows="5" name="message" maxlength="255" placeholder="Optional message..." ></textarea>
         </div>
         <div class = "buttonContainer">
           <button type="submit" class = "submitContactButton"></button>

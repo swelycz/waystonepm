@@ -6,8 +6,13 @@
 			<div class="loginInfoWrapper">
 				<div class="loginInfoContainer">
 					<div class = "loginDesc">Log in as an existing tenant, or create a new account</div>
-					<div class = "loginSignupButton"><b>Login or Sign up -></b>
+					<div class = "homeLogSignButton"><b>Login</b>
 						<a href = "https://waystonepm-tenantportal.azurewebsites.net">
+							<span class = "link-spanner"></span>
+						</a>
+					</div>
+					<div class = "homeLogSignButton"><b>Sign up</b>
+						<a href = "signup.php">
 							<span class = "link-spanner"></span>
 						</a>
 					</div>
