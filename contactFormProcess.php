@@ -22,7 +22,7 @@
     if (empty($message)) {
       $q = "insert CONTACT (FIRSTNAME, LASTNAME, EMAIL, PHONE) values('$fname','$lname','$email','$phone')";
     } else {
-      $q = "insert messages (FIRSTNAME, LASTNAME, EMAIL, PHONE, MESSAGES) values('$fname','$lname','$email','$phone','$message')";
+      $q = "insert CONTACT (FIRSTNAME, LASTNAME, EMAIL, PHONE, MESSAGES) values('$fname','$lname','$email','$phone','$message')";
     }
     $result = sqlsrv_query($conn, $q);
     if ($result === false) {
