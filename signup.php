@@ -110,11 +110,13 @@
             return true;
           }
         }
-        function passInputListen() {
-          passInput.addEventListener('input', function(){
-            comparePass();
-          });
-        }
+        //function passInputListen() {
+          if (passInput !== null) {
+            passInput.addEventListener('input', function(){
+              comparePass();
+            });
+          }
+        //}
         function confPassInputListen() {
           //if (confPassInput !== null) {
             confPassInput.addEventListener('input', function(){

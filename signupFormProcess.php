@@ -27,31 +27,31 @@
     $confPass = filter_var($_POST['confPass']);
     //var_dump($_POST);
     if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($day) || empty($month) || empty($year) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
-      return ['all fields required', false]; // stop function execution w/ error message
+      return ['CUSTOM PHPERROR: all fields required', false]; // stop function execution w/ error message
     } else if ($email !== $confEmail) {
-      return ['emails do not match', false]; // stop function execution w/ error message
+      return ['CUSTOM PHPERROR: emails do not match', false]; // stop function execution w/ error message
     } else if ($pass !== $confPass) {
-      return ['passwords do not match', false]; // stop function execution w/ error message
+      return ['CUSTOM PHPERROR: passwords do not match', false]; // stop function execution w/ error message
     }
 
-    $q = "select * from tenant_login where email = '$email'";
+    $q = "select * from ten_login where email = '$email'";
     $result = sqlsrv_query($conn, $q);
     if ($result === false) {
       die(print_r(sqlsrv_errors(), true));
-      return ["connection error during tenant_login query", false]; // stop function execution w/ error message
+      return ["CUSTOM PHPERROR: connection error during tenant_login query", false]; // stop function execution w/ error message
     }
     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
 
     if (!is_null($row)) {
-      return ['email is already registered', false]; // stop function execution w/ error message
+      return ['CUSTOM PHPERROR: email is already registered', false]; // stop function execution w/ error message
     }
     // process to insert into tenant_login table first
     sqlsrv_free_stmt($result); // free up the $result variable
-    $q = "insert tenant_login (email, password) values('$email','$pass')"; // prepare query
+    $q = "insert ten_login (email, password) values('$email','$pass')"; // prepare query
     $result = sqlsrv_query($conn, $q); // query database and set equal to $result
     if ($result === false) { // check for connection/process errors
       die(print_r(sqlsrv_errors(), true)); // print errors
-      return ["connection error durring tenant_login insert", false]; // stop function execution w/ error message
+      return ["CUSTOM PHPERROR: connection error durring tenant_login insert", false]; // stop function execution w/ error message
     }
 
     $DOB = $year . "-" . $month . "-" . $day; // combine year, month, and day variables into one
@@ -60,7 +60,7 @@
     $result = sqlsrv_query($conn, $q); // query database and set equal to $result
     if ($result === false) { // check for connection/process errors
       die(print_r(sqlsrv_errors(), true)); // print errors
-      return ["connection error durring TENANT insert", false]; // stop function execution w/ error message
+      return ["CUSTOM PHPERROR: connection error durring TENANT insert", false]; // stop function execution w/ error message
     }
     return [null, true]; // give thumbs up that everything worked
   }
