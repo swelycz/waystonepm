@@ -10,21 +10,21 @@
   $conn = sqlsrv_connect($serverName, $connectionOptions);
 
   function signupUser(&$conn) {
-    $fname = filter_var($_POST['fname']);
-    $mi = filter_var($_POST['mIni']);
-    $lname = filter_var($_POST['lname']);
-    $address = filter_var($_POST['address']);
-    $city = filter_var($_POST['city']);
+    $fname = filter_var($_POST['fname'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $mi = filter_var($_POST['mIni'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $lname = filter_var($_POST['lname'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $address = filter_var($_POST['address'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $city = filter_var($_POST['city'], FILTER_SANITIZE_SPECIAL_CHARS);
     $state = filter_var($_POST['state']);
-    $zip = filter_var($_POST['zip']);
-    $phone = filter_var($_POST['phone']);
+    $zip = filter_var($_POST['zip'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $phone = filter_var($_POST['phone'], FILTER_SANITIZE_SPECIAL_CHARS);
     $day = filter_var($_POST['days']);
     $month = filter_var($_POST['months']);
     $year = filter_var($_POST['years']);
-    $email = filter_var($_POST['email']);
-    $confEmail = filter_var($_POST['confEmail']);
-    $pass = filter_var($_POST['password']);
-    $confPass = filter_var($_POST['confPass']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $confEmail = filter_var($_POST['confEmail'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $confPass = filter_var($_POST['confPass'], FILTER_SANITIZE_SPECIAL_CHARS);
     //var_dump($_POST);
     if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($day) || empty($month) || empty($year) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
       return ['CUSTOM PHPERROR: all fields required', false]; // stop function execution w/ error message
