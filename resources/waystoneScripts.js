@@ -84,7 +84,8 @@ $(document).ready(function() {
   }); */
   $('.signupButton').click(function(){
     if (!$('.signupButton').hasClass('validate')){
-      $('.signupButton').addClass('onclic', 250);validateSignup();
+      $('.signupButton').addClass('onclic', 250);
+      validateSignup();
     }
   });
   function validateSignup(){
@@ -111,7 +112,7 @@ $(document).ready(function() {
         $('.signupButton').addClass('validate', 450);
       }
     }, 2250);
-  }  
+  }
   $('#zip').mask('00000');
   $('#phone').mask('000-000-0000');
 

@@ -403,10 +403,20 @@ nav ul li {
 	margin: 0 auto;
 	background-color: #ededed;
 }
+.contactFormCover {
+	width: 80%;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	animation: fadein 1.25s;
+}
 .contactForm {
 	width: 80%;
 	padding-bottom: 50px;
 	margin: 0 auto;
+	animation: fadein 1.25s;
 }
 .contactForm p {
 	font-size: 18px;
@@ -859,10 +869,10 @@ footer ul li a {
 		padding-top: 0;
 	}
 	.contactFormPannel {
-		height: 550px;
+		height: 515px;
 	}
 	.contactFormPannelBackground {
-		height: 625px;
+		height: 600px;
 	}
 	.contactFormInputs {
 		margin-bottom: 10px;
@@ -986,15 +996,21 @@ footer ul li a {
 	color:var(--green);
 	background: white;
 }
+.validate:active {
+	letter-spacing: 4px;
+}
 .validate {
+	cursor: default;
+	width: 400px;
+	height: 75px;
 	font-family: var(--p-font);
-  font-size:16px;
+  font-size: 16px;
 	font-weight: 400;
   color: white;
   background: var(--green);
 }
 .validate:after {
-	content:"✓ MESSAGE SENT";
+	content:"✓ MESSAGE HAS BEEN SENT";
 }
 /* script div settings */
 .scriptsWrapper, #scriptsContainer {

@@ -1,4 +1,13 @@
-<?php	include("templates/header.php") ?>
+<?php	include("templates/header.php");
+  $sentMessage;
+  if (isset($_SESSION['sentMessage'])) {
+    if ($_SESSION['sentMessage']) {
+      $sentMessage = true;
+    }
+  } else {
+    $sentMessage = false;
+  }
+?>
   <div class = "contactSideNav">
     <div class = "topPageButton">
       <a>
@@ -34,27 +43,13 @@
   <div class="contactFormPannelBackground">
     <div class="contactFormPannel">
       <div class = "pageTitle"><p>Contact</p></div>
-      <form class="contactForm" id="contactForm" action="contactFormProcess.php" method="post">
-        <div class="contactFormInputs">
-          <input type="text" id="fname" name="fname" maxlength="32" placeholder="First Name" required>
-          <input type="text" id="lname" name="lname"maxlength="32" placeholder="Last Name" required>
-        </div>
-        <div class = "contactFormInputs">
-          <div class = "emailContainer">
-            <p id="emailValidationMsg">Email entered is not valid</p>
-            <input type="email" id="email" name="email" maxlength="64" placeholder="Email Address" required>
-          </div>
-          <div class="phoneContainer">
-            <input type="text" id="phone" name="phone" maxlength="14" placeholder="Phone Number" required>
-          </div>
-        </div>
-        <div class="contactFormInputs">
-          <textarea id="message" cols="30" rows="5" name="message" maxlength="255" placeholder="Optional message..." ></textarea>
-        </div>
-        <div class = "buttonContainer">
-          <button type="submit" class = "submitContactButton"></button>
-        </div>
-      </form>
+      <?php
+        if ($sentMessage) {
+          include("templates/contactFormCover.php");
+        } else {
+          include("templates/contactForm.php");
+        }
+       ?>
       <script>
         var emailInput = document.querySelector('#email');
         function checkEmail(email) {

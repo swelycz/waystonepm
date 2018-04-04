@@ -35,6 +35,7 @@
 
   list($msg, $success) = submitContactInfo($conn);
   $_SESSION['msg'] = $msg;
+  $_SESSION['sentMessage'] = true;
 
   sqlsrv_free_stmt($result);
   header("Location: contact.php");
