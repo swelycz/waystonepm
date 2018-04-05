@@ -5,7 +5,15 @@
       <div id = "signupModuleButton" class = "unfocused">Sign Up</div>
     </div>
     <div id='signupModule'>
-      <p class = "signupFormErrorMsg"><?= $_SESSION['msg'] ?></p>
+      <p class = "signupFormErrorMsg">
+        <?php
+          if (isset($_SESSION['msg'])) {
+            if ($_SESSION['msg']) {
+              $_SESSION['msg'];
+            }
+          }
+        ?>
+      </p>
       <form class='signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'>
         <div class='signupFormInputs'>
           <input type='text' name='fname' id='fname' placeholder='First Name' maxlength='32' required>
@@ -72,7 +80,7 @@
         <div class='signupFormInputs'>
           <input type='text' name='zip' id='zip' placeholder='Zip Code' maxlength='5' required>
           <input type='text' name='phone' id='phone' placeholder='Phone Number' maxlength='12' required>
-          <p class='dobLabel'>Date of Birth:</p><input type="text" name="DOB" id="DOB">
+          <p class='dobLabel'>Date of Birth:</p><input type="text" name="DOB" id="DOB" placeholder="Click here">
         </div><div class='signupFormInputs'>
           <p id='emailValidationMsg'>Email entered is not valid</p>
           <p id='confEmailValidationMsg'>Emails do not match</p>
@@ -108,20 +116,20 @@
             return true;
           }
         }
-        //function passInputListen() {
+        function passInputListen() {
           if (passInput !== null) {
             passInput.addEventListener('input', function(){
               comparePass();
             });
           }
-        //}
-        function confPassInputListen() {
-          //if (confPassInput !== null) { // Was experimenting solutions
+        }
+        //function confPassInputListen() {
+          if (confPassInput !== null) { // Was experimenting solutions
             confPassInput.addEventListener('input', function(){
               comparePass();
             });
-          //}
-        }
+          }
+        //}
         var emailInput = document.getElementById('email');
         var confEmailInput=document.getElementById('confEmail');
         function compareEmails(){

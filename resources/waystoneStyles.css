@@ -705,10 +705,16 @@ nav ul li {
 	animation: fadein .8s;
 }
 .signupForm {
-	margin-top: 20px;
+	margin-top: 10px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+}
+.signupFormErrorMsg {
+	color: #ff0000;
+	var(--p-font);
+	font-size: 16px;
+	height: 10px;
 }
 .signupFormInputs {
 	display: flex;
@@ -725,6 +731,9 @@ nav ul li {
 	height: 40px;
 	line-height: 40px;
 	margin-bottom: 15px;
+}
+#DOB {
+	width: 100px;
 }
 .signupForm #city {
 	width: 120px;

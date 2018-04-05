@@ -127,14 +127,13 @@ $(document).ready(function() {
     var lname = $("#lname").value;
     var email = $("#email").value;
     var phone = $("#phone").value;
-    setTimeout(function() {
-      if (fname == null || fname == "",lname == null || lname == "",email == null || email == "",phone == null || phone == "") {
-        $(".submitContactButton").removeClass("onclic");
-      } else {
-        $(".submitContactButton").removeClass("onclic");
-        $(".submitContactButton").addClass("validate", 450);
-      }
-    }, 2250);
+    if (!isset($_SESSION['success'])) {
+      setTimeout(function() {
+        if (fname == null || fname == "",lname == null || lname == "",email == null || email == "",phone == null || phone == "") {
+          $(".submitContactButton").removeClass("onclic");
+        }
+      }, 2250);
+    }   
   }
 
   $("#topScroll").click(function() {
