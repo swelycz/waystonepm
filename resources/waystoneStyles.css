@@ -269,12 +269,18 @@ nav ul li {
 	font-family: var(--title-font);
 	font-weight: bold;
 }
+.homeLogSignButton:active {
+	background: rgba(10,14,43,1);
+	color: inherit;
+	transition: none;
+}
 .homeLogSignButton:hover {
 	background: rgba(10,14,43,.85);
 	color: #FFF;
 }
 .homeLogSignButton {
 	float: left;
+	color: inherit;
 	position: relative;
 	font-size: 40px;
 	padding: 25px 40px;
@@ -284,6 +290,11 @@ nav ul li {
 	font-family: var(--title-font);
 	margin-left: 30px;
 	transition: .25s all;
+}
+.homeLogSignButton a {
+	color: inherit;
+	border: none;
+	text-decoration: none;
 }
 .cityWrapper {
 	display: flex;

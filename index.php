@@ -7,7 +7,7 @@
 				<div class="loginInfoContainer">
 					<div class = "loginDesc">Log in as an existing tenant, or create a new account</div>
 					<div class = "homeLogSignButton"><b>Login</b>
-						<a href = "https://waystonepm-tenantportal.azurewebsites.net">
+						<a href = "https://waystonepm-tenantportal.azurewebsites.net" target="_blank">
 							<span class = "link-spanner"></span>
 						</a>
 					</div>
