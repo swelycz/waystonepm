@@ -30,6 +30,11 @@
                   <span class = "link-spanner"></span>
                 </a>
               </li>
+              <li class = "boxEffect">Marketing
+                <a href = "images/Waystone-Marketing-Materials.pdf" target="_blank">
+                  <span class = "link-spanner"></span>
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
