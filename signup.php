@@ -8,9 +8,7 @@
       <p class = "signupFormErrorMsg">
         <?php
           if (isset($_SESSION['msg'])) {
-            if ($_SESSION['msg']) {
-              $_SESSION['msg'];
-            }
+            echo $_SESSION['msg'];
           }
         ?>
       </p>
