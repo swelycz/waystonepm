@@ -14,10 +14,10 @@
         <div class = "footerContactInfoWrapper">
           <ul>
             <li><b><u>Main Office</u></b></li>
-            <li>Phone: (999)999-9999</li>
-            <li>Fax: (999)999-9999</li>
-            <li>Address: 9999 Somewhere Dr.</li>
-            <li></li>
+            <li>Phone: (800)345-6780</li>
+            <li>Email: info@waystone.com</li>
+            <li>Address: 3275 N Broad Street</li>
+            <li>Miami FL, 33150</li>
           </ul>
         </div>
       </div>
