@@ -18,9 +18,7 @@
     $state = filter_var($_POST['state']);
     $zip = filter_var($_POST['zip'], FILTER_SANITIZE_SPECIAL_CHARS);
     $phone = filter_var($_POST['phone'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $day = filter_var($_POST['days']);
-    $month = filter_var($_POST['months']);
-    $year = filter_var($_POST['years']);
+    $DOB = filter_var($_POST['DOB'], FILTER_SANITIZE_SPECIAL_CHARS);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
     $confEmail = filter_var($_POST['confEmail'], FILTER_SANITIZE_SPECIAL_CHARS);
     $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
@@ -53,8 +51,7 @@
       die(print_r(sqlsrv_errors(), true)); // print errors
       return ["CUSTOM PHPERROR: connection error durring tenant_login insert", false]; // stop function execution w/ error message
     }
-
-    $DOB = $year . "-" . $month . "-" . $day; // combine year, month, and day variables into one
+    
     sqlsrv_free_stmt($result); // free up the $result variable
     $q = "insert TENANT (FIRSTNAME,MI,LASTNAME,PERM_ADDRESS,PERM_CITY,PERM_STATE,PERM_ZIP,PHONE,EMAIL,DOB) values('$fname','$mi','$lname','$address','$city','$state','$zip','$phone','$email','$DOB')"; // prepare query
     $result = sqlsrv_query($conn, $q); // query database and set equal to $result

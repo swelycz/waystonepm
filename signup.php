@@ -71,10 +71,7 @@
         <div class='signupFormInputs'>
           <input type='text' name='zip' id='zip' placeholder='Zip Code' maxlength='5' required>
           <input type='text' name='phone' id='phone' placeholder='Phone Number' maxlength='12' required>
-          <p class='dobLabel'>Date of Birth:</p>
-          <select name='years' id='years' required></select>
-          <select name='months' id='months' required></select>
-          <select name='days' id='days' required></select>
+          <p class='dobLabel'>Date of Birth:</p><input type="text" name="DOB" id="DOB">
         </div><div class='signupFormInputs'>
           <p id='emailValidationMsg'>Email entered is not valid</p>
           <p id='confEmailValidationMsg'>Emails do not match</p>
@@ -170,7 +167,18 @@
             compareEmails();
           });
         }
-        for (i=(new Date().getFullYear()) - 18; i > 1900; i--){
+        $(function() {
+          $("#DOB").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "yy-mm-dd",
+            minDate: new Date(1900),
+            maxDate: -6570,
+            showAnim: "slideDown"
+          });
+        });
+
+        /*for (i=(new Date().getFullYear()) - 18; i > 1900; i--){
           $('#years').append($('<option/>').val(i).html(i));
         }
         for (i=1; i < 13; i++){
@@ -181,7 +189,7 @@
           updateNumberOfDays();
         });
         function updateNumberOfDays(){
-          $('#days').html('');
+          $('#days').html("<option value=''>D</option>");
           month=$('#months').val();
           year=$('#years').val();
           days=daysInMonth(month, year);
@@ -191,7 +199,7 @@
         }
         function daysInMonth(month, year){
           return new Date(year, month, 0).getDate();
-        }
+        }*/
       </script>
     </div>
   </div>
