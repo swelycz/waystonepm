@@ -761,29 +761,53 @@ nav ul li {
 	background: url("../images/miami-beach-blur.png") 100% no-repeat;
 	background-size: 100% 100%;
 }
+.resourceWrapperCover {
+	width: 80%;
+	height: 100%;
+	color: var(--dark-blue);
+	background: url("../images/silver.jpg") 100% no-repeat;
+	background-size: 100% 100%;
+}
 .resourceWrapper {
-	width: 90%;
-	height: 80%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(237, 237, 237, 0.6);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: rgba(210, 210, 210, 0.8);
 }
 .resourceContainer {
-	width: 25%;
-	height: 80%;
+	width: 500px;
+	height: 400px;
 	font-size: 22px;
 	margin-left: 50px;
 	border: 2px solid #000;
-	background: rgb(255, 255, 255);
+	background: #FFF;
 	font-family: var(--title-font);
 	letter-spacing: 2px;
 	font-weight: bold;
 	position: relative;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+}
+.resourceLinkContainer {
+	margin-top: 50px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+.resourceLinkContainer p:hover {
+	font-weight: bold;
+}
+.resourceLinkContainer p {
+	font-size: 30px;
+	padding-bottom: 40px;
+	text-decoration: underline;
+}
+.resourceLinkContainer a {
+	margin-top: 15px;
+	margin-left: 35px;
 }
 .brochureContainer, .businessCardContainer {
 	width: 100%;

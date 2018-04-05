@@ -32,7 +32,7 @@
                 </a>
               </li>
               <li class = "boxEffect">Marketing
-                <a href = "images/Waystone-Marketing-Materials.pdf" target="_blank">
+                <a href = "marketing.php">
                   <span class = "link-spanner"></span>
                 </a>
               </li>

@@ -1,14 +1,18 @@
     <footer>
       <div class = "footerContainer">
         <div class = "footerNav">
-          <ul>
-            <li><a href = "index.php">Home</a></li>
-            <li><a href = "contact.php">Contact</a></li>
-            <li><a href = "faq.php">FAQ</a></li>
-          </ul>
-          <ul>
-            <li><a href = "https://waystonepm-tenantportal.azurewebsites.net">Login/Signup</a></li>
-          </ul>
+          <div class = "footerNavContainer">
+            <ul>
+              <li><a href = "index.php">Home</a></li>
+              <li><a href = "contact.php">Contact</a></li>
+              <li><a href = "faq.php">FAQ</a></li>
+              <li><a href = "marketing.php">Marketing</a></li>
+            </ul>
+            <ul>
+              <li><a href = "https://waystonepm-tenantportal.azurewebsites.net">Tenant Portal</a></li>
+              <li><a href = "signup.php">Sign up</a></li>
+            </ul>
+          </div>
         </div>
         <div class = "footerLogoWrapper"><div class = "footerLogo"></div></div>
         <div class = "footerContactInfoWrapper">
