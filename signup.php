@@ -5,6 +5,7 @@
       <div id = "signupModuleButton" class = "unfocused">Sign Up</div>
     </div>
     <div id='signupModule'>
+      <p class = "signupFormErrorMsg"><?= $_SESSION['msg'] ?></p>
       <form class='signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'>
         <div class='signupFormInputs'>
           <input type='text' name='fname' id='fname' placeholder='First Name' maxlength='32' required>

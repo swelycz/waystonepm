@@ -24,7 +24,7 @@
     $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
     $confPass = filter_var($_POST['confPass'], FILTER_SANITIZE_SPECIAL_CHARS);
     //var_dump($_POST);
-    if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($day) || empty($month) || empty($year) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
+    if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($DOB) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
       return ['CUSTOM PHPERROR: all fields required', false]; // stop function execution w/ error message
     } else if ($email !== $confEmail) {
       return ['CUSTOM PHPERROR: emails do not match', false]; // stop function execution w/ error message
@@ -51,7 +51,7 @@
       die(print_r(sqlsrv_errors(), true)); // print errors
       return ["CUSTOM PHPERROR: connection error durring tenant_login insert", false]; // stop function execution w/ error message
     }
-    
+
     sqlsrv_free_stmt($result); // free up the $result variable
     $q = "insert TENANT (FIRSTNAME,MI,LASTNAME,PERM_ADDRESS,PERM_CITY,PERM_STATE,PERM_ZIP,PHONE,EMAIL,DOB) values('$fname','$mi','$lname','$address','$city','$state','$zip','$phone','$email','$DOB')"; // prepare query
     $result = sqlsrv_query($conn, $q); // query database and set equal to $result
@@ -70,8 +70,8 @@
   } else {
     $location = 'signup.php'; // if it didn't work, redirect back to signup page
   }
-  echo $_SESSION['msg']; // Here for debugging
+  //echo $_SESSION['msg']; // Here for debugging
 
-  //header("Location: $location");
+  header("Location: $location");
 
   ?>
