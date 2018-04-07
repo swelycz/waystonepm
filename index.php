@@ -1,6 +1,4 @@
-<?php	include("templates/header.php");
-	$_SESSION['sentMessage'] = false;
- ?>
+<?php	include("templates/header.php") ?>
 		<div class="contentPannel MS-Wrapper">
 			<div class = "subtitleWrapper">
 				<div class = "subtitle">Welcome</div>

@@ -126,16 +126,13 @@ $(document).ready(function() {
     var fname = $("#fname").value;
     var lname = $("#lname").value;
     var email = $("#email").value;
-    var phone = $("#phone").value;    
+    var phone = $("#phone").value;
     setTimeout(function() {
       if (fname == null || fname == "",lname == null || lname == "",email == null || email == "",phone == null || phone == "") {
         $(".submitContactButton").removeClass("onclic");
       }
     }, 2250);
   }
-  $(".newContactMessageButton").click(function(){
-
-  });
   $("#topScroll").click(function() {
     $('html, body').animate({
       scrollTop: 0
