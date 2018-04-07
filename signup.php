@@ -78,7 +78,7 @@
         <div class='signupFormInputs'>
           <input type='text' name='zip' id='zip' placeholder='Zip Code' maxlength='5' required>
           <input type='text' name='phone' id='phone' placeholder='Phone Number' maxlength='12' required>
-          <p class='dobLabel'>Date of Birth:</p><input type="text" name="DOB" id="DOB" placeholder="Click here">
+          <input type="text" name="DOB" id="DOB" placeholder="Date of Birth" maxlength="0">
         </div><div class='signupFormInputs'>
           <p id='emailValidationMsg'>Email entered is not valid</p>
           <p id='confEmailValidationMsg'>Emails do not match</p>

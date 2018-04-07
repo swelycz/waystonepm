@@ -1,12 +1,11 @@
 <?php	include("templates/header.php");
-  $sentMessage;
-  $_SESSION['sentMessage'] = true;
+  $_SESSION['sentMessage'];
   if (isset($_SESSION['sentMessage'])) {
     if ($_SESSION['sentMessage']) {
       $sentMessage = true;
+    } else {
+      $sentMessage = false;
     }
-  } else {
-    $sentMessage = false;
   }
 ?>
   <div class = "contactSideNav">

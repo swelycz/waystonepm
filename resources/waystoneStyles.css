@@ -728,16 +728,8 @@ nav ul li {
 .signupFormInputs #emailValidationMsg {
 	padding-right: 100px;
 }
-.dobLabel {
-	padding-left: 20px;
-	font-size: 18px;
-	width: 100px;
-	height: 40px;
-	line-height: 40px;
-	margin-bottom: 15px;
-}
 #DOB {
-	width: 100px;
+	width: 110px;
 }
 .signupForm #city {
 	width: 120px;
@@ -754,7 +746,8 @@ nav ul li {
 .signupForm select {
 	font-family: var(--p-font);
 	font-size: 18px;
-	height: 35px;
+	height: 42px;
+	width: 142px;
 	padding: 5px 0;
 	margin-bottom: 15px;
 	margin-left: 10px;
@@ -1106,6 +1099,7 @@ footer ul li a {
   width: 40px;
   border-color: #bbb;
   border-width: 3px;
+	border-radius: 40px;
   font-size: 0;
   border-left-color: var(--green);
   animation: rotating 2s 0.25s linear infinite;
