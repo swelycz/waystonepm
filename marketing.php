@@ -4,9 +4,9 @@
     <div class = "resourceWrapper">
       <div class="resourceContainer">
         <div class="resourceLinkContainer">
-          <p>
-            MARKETING RESOURCES
-          </p>
+          <div class="pageTitle">
+            <p>Marketing Resources</p>
+          </div>
           <a href="images/Front-Brochure.jpg" target="_blank">Company Brochure (Front)</a>
           <a href="images/Back-Brochure.jpg" target="_blank">Company Brochure (Back)</a>
           <a href="images/Waystone-Property-Brochure.pdf" target="_blank">Property Brochures</a>

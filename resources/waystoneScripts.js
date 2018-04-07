@@ -133,9 +133,11 @@ $(document).ready(function() {
           $(".submitContactButton").removeClass("onclic");
         }
       }, 2250);
-    }   
+    }
   }
-
+  $(".newContactMessageButton").click(function(){
+    
+  });
   $("#topScroll").click(function() {
     $('html, body').animate({
       scrollTop: 0

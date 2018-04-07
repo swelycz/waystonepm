@@ -12,6 +12,9 @@
 	list-style: none;
 	text-decoration: none;
 }
+button::-moz-focus-inner {
+  border: 0;
+}
 input:focus {
 	border-color: #9ecaed;
 	box-shadow:0 0 10px #9ecaed;
@@ -420,6 +423,7 @@ nav ul li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	margin: 0 auto;
 	animation: fadein 1.25s;
 }
@@ -787,7 +791,7 @@ nav ul li {
 	flex-direction: column;
 }
 .resourceContainer {
-	width: 500px;
+	width: 700px;
 	height: 400px;
 	font-size: 22px;
 	margin-left: 50px;
@@ -806,17 +810,20 @@ nav ul li {
 	align-items: flex-start;
 	flex-direction: column;
 }
-.resourceLinkContainer p:hover {
-	font-weight: bold;
+.resourceLinkContainer .pageTitle p::before {
+	margin-top: 0;
 }
-.resourceLinkContainer p {
-	font-size: 30px;
+.resourceLinkContainer .pageTitle p {
+	font-size: 40px;
 	padding-bottom: 40px;
-	text-decoration: underline;
+	letter-spacing: 6px;
+}
+.resourceLinkContainer a:hover {
+	font-weight: bold;
 }
 .resourceLinkContainer a {
 	margin-top: 15px;
-	margin-left: 35px;
+	margin-left: 20px;
 }
 .brochureContainer, .businessCardContainer {
 	width: 100%;
@@ -1038,12 +1045,41 @@ footer ul li a {
 .loginButton:after {
   content: "LOGIN";
 }
+.newContactMessageButton:hover {
+	background-color: var(--green);
+	color: #FFF;
+}
+.newContactMessageButton:active {
+	letter-spacing: 6px;
+	background-color: #036705;
+	transition: none;
+}
+.newContactMessageButton {
+	outline: none;
+	width: 400px;
+	height: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 16px;
+	font-family: var(--p-font);
+  background-color: #fff;
+  border: 2px solid var(--green);
+  color: var(--green);
+  letter-spacing: 4px;
+  text-shadow: 0;
+	font-weight: 400;
+	cursor: pointer;
+	transition: all .25s;
+}
+.newContactMessageButton::after {
+	content: 'NEW MESSAGE';
+}
 .submitContactButton {
   outline: none;
   height: 40px;
-  text-align: center;
   width: 230px;
-  border-radius: 40px;
   background: #fff;
   border: 2px solid var(--green);
   color: var(--green);
