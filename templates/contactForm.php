@@ -6,7 +6,10 @@
   </div>
   <div class = "contactFormInputs">
     <div class = "contactEmailContainer">
-      <p id="emailValidationMsg" style="<?= isset($_SESSION['sentMessage']) && !isset($_SESSION['email']) ? "visibility: visible;" : "" ?>">Email entered is not valid</p>
+      <p id="emailValidationMsg" <?php if (isset($_SESSION['sentMessage']) && !isset($_SESSION['email'])) {
+          echo "style = 'visibility: visible;'";
+        }
+      ?>>Email entered is not valid</p>
       <input type="email" id="email" name="email" maxlength="64" style="<?= isset($_SESSION['sentMessage']) && !isset($_SESSION['email']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder="Email Address" required>
     </div>
     <div class="phoneContainer">
