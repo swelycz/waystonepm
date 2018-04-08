@@ -47,6 +47,6 @@
 
   //sqlsrv_free_stmt($result);
   echo $_SESSION['msg'];
-  //header("Location: contact.php");
+  header("Location: contact.php");
 
   ?>
