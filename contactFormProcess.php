@@ -19,6 +19,14 @@
     if (empty($fname) || empty($lname) || empty($email) || empty($phone)) {
       return ['all fields required', false];
     }
+    preg_match('/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/', $email, $matches);
+    if ($matches !== null) {
+      return ['Email is not Valid', false];
+    }
+    preg_match('/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im', $phone, $matches);
+    if ($matches !== null) {
+      return ['Phone is not Valid', false];
+    }
     if (empty($message)) {
       $q = "insert CONTACT (FIRSTNAME, LASTNAME, EMAIL, PHONE) values('$fname','$lname','$email','$phone')";
     } else {
@@ -38,6 +46,7 @@
   $_SESSION['sentMessage'] = true;
 
   sqlsrv_free_stmt($result);
-  header("Location: contact.php");
+  echo $_SESSION['msg'];
+  //header("Location: contact.php");
 
   ?>

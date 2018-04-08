@@ -51,6 +51,12 @@
         }
        ?>
       <script>
+        function Check(e) {
+          var keyCode = (e.keyCode ? e.keyCode : e.which);
+          if ((keyCode > 47 && keyCode < 58) || keyCode > 90) {
+            e.preventDefault();
+          }
+        }
         var emailInput = document.querySelector('#email');
         function checkEmail(email) {
           var re = /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/;
@@ -72,6 +78,28 @@
         }
         emailInput.addEventListener('input', function(){
           validateEmail();
+        });
+        var phoneInput = document.querySelector('#phone');
+        function checkPhone(phone) {
+          var isValidPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+          return isValidPhone.test(phone);
+        }
+        function validatePhone() {
+          var phone = phoneInput.value;
+          if (!checkPhone(phone)) {
+            $("#phone").css("border-color","#ff0000");
+            $("#phone").css("box-shadow","0 0 10px #ff0000");
+            $("#phoneValidationMsg").css("visibility","visible");
+            return false;
+          } else {
+            $("#phone").css("border-color",'');
+            $("#phone").css("box-shadow",'');
+            $("#phoneValidationMsg").css("visibility",'');
+            return true;
+          }
+        }
+        phoneInput.addEventListener('input', function(){
+          validatePhone();
         });
       </script>
     </div>

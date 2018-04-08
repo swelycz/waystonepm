@@ -1,15 +1,16 @@
 <form class="contactForm" id="contactForm" action="contactFormProcess.php" method="post">
   <div class = "contactFormCover"></div>
   <div class="contactFormInputs">
-    <input type="text" id="fname" name="fname" maxlength="32" placeholder="First Name" required autofocus>
-    <input type="text" id="lname" name="lname"maxlength="32" placeholder="Last Name" required>
+    <input type="text" id="fname" name="fname" maxlength="32" placeholder="First Name" required autofocus onkeydown="Check(event);">
+    <input type="text" id="lname" name="lname"maxlength="32" placeholder="Last Name" required onkeydown="Check(event);">
   </div>
   <div class = "contactFormInputs">
-    <div class = "emailContainer">
+    <div class = "contactEmailContainer">
       <p id="emailValidationMsg">Email entered is not valid</p>
       <input type="email" id="email" name="email" maxlength="64" placeholder="Email Address" required>
     </div>
     <div class="phoneContainer">
+      <p id="phoneValidationMsg">Phone # entered is not valid</p>
       <input type="text" id="phone" name="phone" maxlength="14" placeholder="Phone Number" required>
     </div>
   </div>

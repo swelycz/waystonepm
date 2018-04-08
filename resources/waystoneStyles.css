@@ -4,7 +4,7 @@
 	--p-font: "Marriweather";
 	--title-font: "Nanum Myeongjo";
 	--green: #008c07;
-	--red: #cb0000;
+	--red: #ff0000;
 }
 * {
 	margin: 0;
@@ -467,8 +467,19 @@ nav ul li {
 	letter-spacing: 2px;
 	transition: all .25s;
 }
-.phoneContainer {
-	padding-top: 18px;
+.phoneContainer #phoneValidationMsg {
+	color: var(--red);
+	font-size: 14px;
+	visibility: hidden;
+	padding-left: 50px;
+}
+.contactEmailContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.contactEmailContainer #emailValidationMsg {
+	padding-left: 50px;
 }
 .contactFormInputs {
 	width: 100%;
@@ -715,7 +726,7 @@ nav ul li {
 	flex-direction: column;
 }
 .signupFormErrorMsg {
-	color: #ff0000;
+	color: var(--red);
 	var(--p-font);
 	font-size: 16px;
 	height: 10px;
@@ -728,6 +739,21 @@ nav ul li {
 .signupFormInputs #emailValidationMsg {
 	padding-right: 100px;
 }
+.formErrorMsgContainer {
+	display: flex;
+	width: 420px;
+}
+.formErrorMsgContainer p {
+	color: var(--red);
+	font-size: 14px;
+}
+.formErrorMsgContainer #zipValidationMsg {
+	padding-right: 40px;
+	visibility: hidden;
+}
+.formErrorMsgContainer #phoneValidationMsg {
+	visibility: hidden;
+}
 #DOB {
 	width: 110px;
 }
@@ -735,7 +761,7 @@ nav ul li {
 	width: 120px;
 }
 .signupForm #zip {
-	width: 100px;
+	width: 110px;
 }
 .signupForm #phone {
 	width: 130px;
@@ -989,7 +1015,6 @@ footer ul li a {
   height: 40px;
   text-align: center;
   width: 230px;
-  border-radius: 40px;
   background: #fff;
   border: 2px solid var(--green);
   color: var(--green);
@@ -1171,10 +1196,4 @@ footer ul li a {
   top: 0;
   left: 0;
   z-index: 1;
-}
-.emailContainer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
 }

@@ -133,6 +133,46 @@ $(document).ready(function() {
       }
     }, 2250);
   }
+  $( "#fname" ).bind( 'paste',function() {
+    setTimeout(function() {
+      //get the value of the input text
+      var data= $( '#fname' ).val();
+      //replace the special characters to ''
+      var dataFull = data.replace(/[^A-Za-z\s]/gi, '');
+      //set the new value of the input text without special characters
+      $( '#fname' ).val(dataFull);
+    });
+  });
+  $( "#mIni" ).bind( 'paste',function() {
+    setTimeout(function() {
+      //get the value of the input text
+      var data= $( '#mIni' ).val();
+      //replace the special characters to ''
+      var dataFull = data.replace(/[^A-Za-z\s]/gi, '');
+      //set the new value of the input text without special characters
+      $( '#mIni' ).val(dataFull);
+    });
+  });
+  $( "#lname" ).bind( 'paste',function() {
+    setTimeout(function() {
+      //get the value of the input text
+      var data= $( '#lname' ).val();
+      //replace the special characters to ''
+      var dataFull = data.replace(/[^A-Za-z\s]/gi, '');
+      //set the new value of the input text without special characters
+      $( '#lname' ).val(dataFull);
+    });
+  });
+  $( "#city" ).bind( 'paste',function() {
+    setTimeout(function() {
+      //get the value of the input text
+      var data= $( '#city' ).val();
+      //replace the special characters to ''
+      var dataFull = data.replace(/[^A-Za-z\s]/gi, '');
+      //set the new value of the input text without special characters
+      $( '#city' ).val(dataFull);
+    });
+  });
   $("#topScroll").click(function() {
     $('html, body').animate({
       scrollTop: 0
