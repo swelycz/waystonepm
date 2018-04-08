@@ -24,7 +24,7 @@
       return ['Email is not Valid', false];
     }
     preg_match('/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im', $phone, $matches);
-    if ($matches !== null) {
+    if ($matches !== null  || strlen($phone) < 12) {
       return ['Phone is not Valid', false];
     }
     if (empty($message)) {
