@@ -203,4 +203,26 @@ $(document).ready(function() {
       scrollTop: $("#losAngeles").offset().top
     }, 700);
   });
+  var url = window.location.href;
+  if (url.search("miami") > -1) {
+    $('html, body').animate({
+      scrollTop: $("#miami").offset().top
+    }, 1000);
+  } else if (url.search("newyork") > -1) {
+    $('html, body').animate({
+      scrollTop: $("#newyork").offset().top
+    }, 1000);
+  } else if (url.search("chicago") > -1) {
+    $('html, body').animate({
+      scrollTop: $("#chicago").offset().top
+    }, 1000);
+  } else if (url.search("vegas") > -1) {
+    $('html, body').animate({
+      scrollTop: $("#vegas").offset().top
+    }, 1000);
+  } else if (url.search("losAngeles") > -1) {
+    $('html, body').animate({
+      scrollTop: $("#losAngeles").offset().top
+    }, 1000);
+  }
 });

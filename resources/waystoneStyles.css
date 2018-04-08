@@ -311,6 +311,9 @@ nav ul li {
 	width: 100%;
 	height: 131px;
 }
+.cityTitle:hover {
+	letter-spacing: 15px;
+}
 .cityTitle {
 	position: relative;
 	width: 700px;
@@ -321,6 +324,35 @@ nav ul li {
 	line-height: 131px;
 	font-family: var(--title-font);
 	border-left: 0;
+	transition: all .75s;
+}
+.cityTitle:hover .title:before, .cityTitle:hover .title:after {
+	width: 51%;
+	opacity: 1;
+}
+.cityTitle .title {
+	position: relative;
+}
+.cityTitle .title:before {
+	position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 4px;
+  content: '';
+  bottom: 0px;
+	background: var(--dark-blue);
+	transition: .75s all;
+}
+.cityTitle .title:after {
+	position: absolute;
+  opacity: 0;
+  width: 0;
+	right: 0;
+  height: 4px;
+  content: '';
+  bottom: 0px;
+	background: var(--dark-blue);
+	transition: .75s all;
 }
 .cityDesc {
 	margin-top: 90px;

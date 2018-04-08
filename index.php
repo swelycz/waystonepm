@@ -24,7 +24,7 @@
 				<div class = "cityTitleContainer">
 					<div class = "cityTitle contentPannelItem">
 						<div class = "linkWrapper">
-							<div class = "linkContainer"><b>Miami</b>
+							<div class = "linkContainer"><a class = "title"><b>Miami</b></a>
 								<a href = "contact.php#miami">
 									<span class = "link-spanner"></span>
 								</a>
@@ -40,7 +40,7 @@
 				<div class = "cityTitleContainer">
 					<div class = "cityTitle contentPannelItem">
 						<div class = "linkWrapper">
-							<div class = "linkContainer"><b>New York</b>
+							<div class = "linkContainer"><a class = "title"><b>New York</b></a>
 								<a href = "contact.php#newyork">
 									<span class = "link-spanner"></span>
 								</a>
@@ -56,7 +56,7 @@
 				<div class = "cityTitleContainer">
 					<div class = "cityTitle contentPannelItem">
 						<div class = "linkWrapper">
-							<div class = "linkContainer"><b>Chicago</b>
+							<div class = "linkContainer"><a class = "title"><b>Chicago</b></a>
 								<a href = "contact.php#chicago">
 									<span class = "link-spanner"></span>
 								</a>
@@ -72,7 +72,7 @@
 				<div class = "cityTitleContainer">
 					<div class = "cityTitle contentPannelItem">
 						<div class = "linkWrapper">
-							<div class = "linkContainer"><b>Las Vegas</b>
+							<div class = "linkContainer"><a class = "title"><b>Las Vegas</b></a>
 								<a href = "contact.php#vegas">
 									<span class = "link-spanner"></span>
 								</a>
@@ -88,7 +88,7 @@
 				<div class = "cityTitleContainer">
 					<div class = "cityTitle contentPannelItem">
 						<div class = "linkWrapper">
-							<div class = "linkContainer"><b>Los Angeles</b>
+							<div class = "linkContainer"><a class = "title"><b>Los Angeles</b></a>
 								<a href = "contact.php#losAngeles">
 									<span class = "link-spanner"></span>
 								</a>
