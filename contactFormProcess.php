@@ -19,12 +19,12 @@
     if (empty($fname) || empty($lname) || empty($email) || empty($phone)) {
       return ['all fields required', false];
     }
-    preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
-    if ($matches !== null) {
+    $emailValidate = ereg("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email);
+    if ($emailValidate) {
       return ['Email is not Valid', false];
     }
-    preg_match('/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im', $phone, $matches);
-    if ($matches !== null  || strlen($phone) < 12) {
+    $phoneValidate = ereg("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im", $phone);
+    if ($phoneValidate || strlen($phone) < 12) {
       return ['Phone is not Valid', false];
     }
     if (empty($message)) {
