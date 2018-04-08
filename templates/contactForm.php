@@ -7,7 +7,7 @@
   <div class = "contactFormInputs">
     <div class = "contactEmailContainer">
       <p id="emailValidationMsg">Email entered is not valid</p>
-      <input type="email" id="email" name="email" maxlength="64" value = "<?= isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>" placeholder="Email Address" required>
+      <input type="email" id="email" name="email" maxlength="64" value = "<?= isset($_SESSION['email']) ? echo $_SESSION['email'] : '' ?>" placeholder="Email Address" required>
     </div>
     <div class="phoneContainer">
       <p id="phoneValidationMsg">Phone # entered is not valid</p>
