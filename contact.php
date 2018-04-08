@@ -82,8 +82,11 @@
         });
         var phoneInput = document.querySelector('#phone');
         function checkPhone(phone) {
-          var isValidPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-          return isValidPhone.test(phone);
+          if (phone.length < 12) {
+            return false;
+          } else {
+            return true;
+          }
         }
         function validatePhone() {
           var phone = phoneInput.value;
