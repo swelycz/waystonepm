@@ -45,7 +45,7 @@
   $_SESSION['msg'] = $msg;
   $_SESSION['sentMessage'] = true;
 
-  sqlsrv_free_stmt($result);
+  //sqlsrv_free_stmt($result);
   echo $_SESSION['msg'];
   //header("Location: contact.php");
 
