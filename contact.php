@@ -1,5 +1,4 @@
 <?php	include("templates/header.php");
-  $_SESSION['sentMessage'];
   if (isset($_SESSION['sentMessage'])) {
     if ($_SESSION['sentMessage']) {
       $sentMessage = true;
