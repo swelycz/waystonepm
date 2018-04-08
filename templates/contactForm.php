@@ -6,12 +6,12 @@
   </div>
   <div class = "contactFormInputs">
     <div class = "contactEmailContainer">
-      <p id="emailValidationMsg">Email entered is not valid</p>
-      <input type="email" id="email" name="email" maxlength="64" value = "<?= isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder="Email Address" required>
+      <p id="emailValidationMsg" style="<?= isset($_SESSION['sentMessage']) && !isset($_SESSION['email']) ? "visibility: visible;" : "" ?>">Email entered is not valid</p>
+      <input type="email" id="email" name="email" maxlength="64" style="<?= isset($_SESSION['sentMessage']) && !isset($_SESSION['email']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder="Email Address" required>
     </div>
     <div class="phoneContainer">
-      <p id="phoneValidationMsg">Phone # entered is not valid</p>
-      <input type="text" id="phone" name="phone" maxlength="14" value = "<?= isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder="Phone Number" required>
+      <p id="phoneValidationMsg" style="<?= isset($_SESSION['sentMessage']) && !isset($_SESSION['email']) ? "visibility: visible;" : "" ?>">Phone # entered is not valid</p>
+      <input type="text" id="phone" name="phone" maxlength="14" style="<?= isset($_SESSION['sentMessage']) && !isset($_SESSION['email']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder="Phone Number" required>
     </div>
   </div>
   <div class="contactFormInputs">
