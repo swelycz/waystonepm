@@ -53,6 +53,11 @@
   $_SESSION['msg'] = $msg;
   if ($success) {
     $_SESSION['sentMessage'] = true;
+    unset($_SESSION['fname']);
+    unset($_SESSION['lname']);
+    unset($_SESSION['email']);
+    unset($_SESSION['phone']);
+    unset($_SESSION['message']);
   } else {
     $_SESSION['sentMessage'] = false;
   }
