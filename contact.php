@@ -5,6 +5,8 @@
     } else {
       $sentMessage = false;
     }
+  } else {
+    $sentMessage = false;
   }
 ?>
   <div class = "contactSideNav">
