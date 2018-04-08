@@ -77,7 +77,7 @@
             return true;
           }
         }
-        emailInput.addEventListener('input', function(){
+        $("#email").bind('change paste keydown', function(){
           validateEmail();
         });
         var phoneInput = document.querySelector('#phone');
