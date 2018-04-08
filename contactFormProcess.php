@@ -16,17 +16,23 @@
     $phone = filter_var($_POST['phone'], FILTER_SANITIZE_SPECIAL_CHARS);
     $message = filter_var($_POST['message'], FILTER_SANITIZE_SPECIAL_CHARS);
 
+    $_SESSION['fname'] = $fname;
+    $_SESSION['lname'] = $lname;
+    $_SESSION['email'] = $email;
+    $_SESSION['phone'] = $phone;
+    $_SESSION['message'] = $message;
+
     if (empty($fname) || empty($lname) || empty($email) || empty($phone)) {
       return ['All Fields Required', false];
     }
     $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
     if ($emailValidate !== 1) {
-      $email = '';
+      $_SESSION['email'] = "";
       return ['Email is not Valid', false];
     }
     $phoneValidate = preg_match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im", $phone, $matches);
     if ($phoneValidate !== 1 || strlen($phone) < 12) {
-      $phone = '';
+      $_SESSION['phone'] = "";
       return ['Phone is not Valid', false];
     }
     if (empty($message)) {
@@ -48,16 +54,11 @@
   if ($success) {
     $_SESSION['sentMessage'] = true;
   } else {
-    $_SESSION['fname'] = $fname;
-    $_SESSION['lname'] = $lname;
-    $_SESSION['email'] = $email;
-    $_SESSION['phone'] = $phone;
-    $_SESSION['message'] = $message;
     $_SESSION['sentMessage'] = false;
   }
 
   //sqlsrv_free_stmt($result);
   echo $_SESSION['msg'];
-  //header("Location: contact.php");
+  header("Location: contact.php");
 
   ?>
