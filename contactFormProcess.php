@@ -43,7 +43,11 @@
 
   list($msg, $success) = submitContactInfo($conn);
   $_SESSION['msg'] = $msg;
-  $_SESSION['sentMessage'] = true;
+  if ($success) {
+    $_SESSION['sentMessage'] = true;
+  } else {
+    $_SESSION['sentMessage'] = false;
+  }
 
   //sqlsrv_free_stmt($result);
   echo $_SESSION['msg'];
