@@ -50,7 +50,6 @@
   }
 
   list($msg, $success) = submitContactInfo($conn);
-  $_SESSION['msg'] = $msg;
   if ($success) {
     $_SESSION['sentMessage'] = true;
     unset($_SESSION['fname']);
@@ -63,8 +62,8 @@
   }
 
   //sqlsrv_free_stmt($result);
+  //$_SESSION['msg'] = $msg;
   //echo $_SESSION['msg'];
-  unset($_SESSION['msg']);
   header("Location: contact.php");
 
   ?>
