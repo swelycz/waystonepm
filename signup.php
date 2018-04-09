@@ -128,13 +128,13 @@
       return true;
     }
   }
-  function passInputListen() {
+  //function passInputListen() {
     if (passInput !== null) {
       passInput.addEventListener('input', function(){
         comparePass();
       });
     }
-  }
+  //}
   //function confPassInputListen() {
     if (confPassInput !== null) { // Was experimenting solutions
       confPassInput.addEventListener('input', function(){
