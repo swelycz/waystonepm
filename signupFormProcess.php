@@ -23,6 +23,18 @@
     $confEmail = filter_var($_POST['confEmail'], FILTER_SANITIZE_SPECIAL_CHARS);
     $pass = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
     $confPass = filter_var($_POST['confPass'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $_SESSION['fname'] = $fname;
+    $_SESSION['mIni'] = $mi;
+    $_SESSION['lname'] = $lname;
+    $_SESSION['address'] = $address;
+    $_SESSION['city'] = $city;
+    $_SESSION['state'] = $state;
+    $_SESSION['zip'] = $zip;
+    $_SESSION['phone'] = $phone;
+    $_SESSION['DOB'] = $DOB;
+    $_SESSION['email'] = $email;
+    $_SESSION['confEmail'] = $confEmail;
     //var_dump($_POST);
     if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($DOB) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
       return ['All Fields Required', false]; // stop function execution w/ error message

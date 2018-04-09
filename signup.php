@@ -14,16 +14,16 @@
       </p>
       <form class='signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'>
         <div class='signupFormInputs'>
-          <input type='text' name='fname' id='fname' placeholder='First Name' maxlength='32' required onkeydown="Check(event);" >
-          <input type='text' name='mIni' id='mIni' placeholder='MI' maxlength='1' required onkeydown="Check(event);">
-          <input type='text' name='lname' id='lname' placeholder='Last Name' maxlength='32' required onkeydown="Check(event);">
+          <input type='text' name='fname' id='fname' value = "<?= isset($_SESSION['fname']) ? $_SESSION['fname'] : "" ?>" placeholder='First Name' maxlength='32' required onkeydown="Check(event);" >
+          <input type='text' name='mIni' id='mIni' value = "<?= isset($_SESSION['mIni']) ? $_SESSION['mIni'] : "" ?>" placeholder='MI' maxlength='1' required onkeydown="Check(event);" >
+          <input type='text' name='lname' id='lname' value = "<?= isset($_SESSION['lname']) ? $_SESSION['lname'] : "" ?>" placeholder='Last Name' maxlength='32' required onkeydown="Check(event);">
         </div>
         <div class='signupFormInputs'>
-          <input type='text' name='address' id='address' placeholder='Address' maxlength='64' required>
-          <input type='text' name='city' id='city' placeholder='City' maxlength='32' required onkeydown="Check(event);">
+          <input type='text' name='address' id='address' value = "<?= isset($_SESSION['address']) ? $_SESSION['address'] : "" ?>" placeholder='Address' maxlength='64' required>
+          <input type='text' name='city' id='city' value = "<?= isset($_SESSION['city']) ? $_SESSION['city'] : "" ?>" placeholder='City' maxlength='32' required onkeydown="Check(event);">
           <select name='state' id='state' required>
             <option value=''>State</option>
-            <option value='AL'>Alabama</option>
+            <option value='AL' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'AL' ? "selected" : "" ?>>Alabama</option>
             <option value='AK'>Alaska</option>
             <option value='AZ'>Arizona</option>
             <option value='AR'>Arkansas</option>
@@ -128,20 +128,16 @@
       return true;
     }
   }
-  //function passInputListen() {
-    if (passInput !== null) {
-      passInput.addEventListener('input', function(){
-        comparePass();
-      });
-    }
-  //}
-  //function confPassInputListen() {
-    if (confPassInput !== null) { // Was experimenting solutions
-      confPassInput.addEventListener('input', function(){
-        comparePass();
-      });
-    }
-  //}
+  if (passInput !== null) {
+    passInput.addEventListener('input', function(){
+      comparePass();
+    });
+  }
+  if (confPassInput !== null) { // Was experimenting solutions
+    confPassInput.addEventListener('input', function(){
+      comparePass();
+    });
+  }
   var emailInput = document.getElementById('email');
   var confEmailInput=document.getElementById('confEmail');
   function compareEmails(){
