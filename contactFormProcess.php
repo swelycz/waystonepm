@@ -51,6 +51,7 @@
 
   list($msg, $success) = submitContactInfo($conn);
   if ($success) {
+    $_SESSION['msgAttempt'] = false;
     $_SESSION['sentMessage'] = true;
     unset($_SESSION['fname']);
     unset($_SESSION['lname']);
@@ -58,6 +59,7 @@
     unset($_SESSION['phone']);
     unset($_SESSION['message']);
   } else {
+    $_SESSION['msgAttempt'] = true;
     $_SESSION['sentMessage'] = false;
   }
 

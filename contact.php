@@ -8,6 +8,15 @@
   } else {
     $sentMessage = false;
   }
+  if (isset($_SESSION['msgAttempt'])) {
+    if ($_SESSION['msgAttempt']) {
+      $msgAttempt = true;
+    } else {
+      $msgAttempt = false;
+    }
+  } else {
+    $msgAttempt = false;
+  }
 ?>
   <div class = "contactSideNav">
     <div class = "topPageButton">
