@@ -1,4 +1,6 @@
-<?php	include("templates/header.php") ?>
+<?php	include("templates/header.php");
+	session_destroy();
+ ?>
 		<div class="contentPannel MS-Wrapper">
 			<div class = "subtitleWrapper">
 				<div class = "subtitle">Welcome</div>

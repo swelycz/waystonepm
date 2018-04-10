@@ -24,55 +24,55 @@
           <select name='state' id='state' required>
             <option value=''>State</option>
             <option value='AL' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'AL' ? "selected" : "" ?>>Alabama</option>
-            <option value='AK'>Alaska</option>
-            <option value='AZ'>Arizona</option>
-            <option value='AR'>Arkansas</option>
-            <option value='CA'>California</option>
-            <option value='CO'>Colorado</option>
-            <option value='CT'>Connecticut</option>
-            <option value='DE'>Delaware</option>
-            <option value='FL'>Florida</option>
-            <option value='GA'>Georgia</option>
-            <option value='HI'>Hawaii</option>
-            <option value='ID'>Idaho</option>
-            <option value='IL'>Illinois</option>
-            <option value='IN'>Indiana</option>
-            <option value='IA'>Iowa</option>
-            <option value='KS'>Kansas</option>
-            <option value='KY'>Kentucky</option>
-            <option value='LA'>Louisiana</option>
-            <option value='ME'>Maine</option>
-            <option value='MD'>Maryland</option>
-            <option value='MA'>Massachusetts</option>
-            <option value='MI'>Michigan</option>
-            <option value='MN'>Minnesota</option>
-            <option value='MS'>Mississippi</option>
-            <option value='MO'>Missouri</option>
-            <option value='MT'>Montana</option>
-            <option value='NE'>Nebraska</option>
-            <option value='NV'>Nevada</option>
-            <option value='NH'>New Hampshire</option>
-            <option value='NJ'>New Jersey</option>
-            <option value='NM'>New Mexico</option>
-            <option value='NY'>New York</option>
-            <option value='NC'>North Carolina</option>
-            <option value='ND'>North Dakota</option>
-            <option value='OH'>Ohio</option>
-            <option value='OK'>Oklahoma</option>
-            <option value='OR'>Oregon</option>
-            <option value='PA'>Pennsylvania</option>
-            <option value='RI'>Rhode Island</option>
-            <option value='SC'>South Carolina</option>
-            <option value='SD'>South Dakota</option>
-            <option value='TN'>Tennessee</option>
-            <option value='TX'>Texas</option>
-            <option value='UT'>Utah</option>
-            <option value='VT'>Vermont</option>
-            <option value='VA'>Virginia</option>
-            <option value='WA'>Washington</option>
-            <option value='WV'>West Virginia</option>
-            <option value='WI'>Wisconsin</option>
-            <option value='WY'>Wyoming</option>
+            <option value='AK' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'AK' ? "selected" : "" ?>>Alaska</option>
+            <option value='AZ' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'AZ' ? "selected" : "" ?>>Arizona</option>
+            <option value='AR' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'AR' ? "selected" : "" ?>>Arkansas</option>
+            <option value='CA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'CA' ? "selected" : "" ?>>California</option>
+            <option value='CO' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'CO' ? "selected" : "" ?>>Colorado</option>
+            <option value='CT' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'CT' ? "selected" : "" ?>>Connecticut</option>
+            <option value='DE' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'DE' ? "selected" : "" ?>>Delaware</option>
+            <option value='FL' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'FL' ? "selected" : "" ?>>Florida</option>
+            <option value='GA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'GA' ? "selected" : "" ?>>Georgia</option>
+            <option value='HI' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'HI' ? "selected" : "" ?>>Hawaii</option>
+            <option value='ID' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'ID' ? "selected" : "" ?>>Idaho</option>
+            <option value='IL' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'IL' ? "selected" : "" ?>>Illinois</option>
+            <option value='IN' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'IN' ? "selected" : "" ?>>Indiana</option>
+            <option value='IA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'IA' ? "selected" : "" ?>>Iowa</option>
+            <option value='KS' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'KS' ? "selected" : "" ?>>Kansas</option>
+            <option value='KY' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'KY' ? "selected" : "" ?>>Kentucky</option>
+            <option value='LA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'LA' ? "selected" : "" ?>>Louisiana</option>
+            <option value='ME' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'ME' ? "selected" : "" ?>>Maine</option>
+            <option value='MD' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MD' ? "selected" : "" ?>>Maryland</option>
+            <option value='MA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MA' ? "selected" : "" ?>>Massachusetts</option>
+            <option value='MI' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MI' ? "selected" : "" ?>>Michigan</option>
+            <option value='MN' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MN' ? "selected" : "" ?>>Minnesota</option>
+            <option value='MS' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MS' ? "selected" : "" ?>>Mississippi</option>
+            <option value='MO' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MO' ? "selected" : "" ?>>Missouri</option>
+            <option value='MT' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'MT' ? "selected" : "" ?>>Montana</option>
+            <option value='NE' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NE' ? "selected" : "" ?>>Nebraska</option>
+            <option value='NV' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NV' ? "selected" : "" ?>>Nevada</option>
+            <option value='NH' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NH' ? "selected" : "" ?>>New Hampshire</option>
+            <option value='NJ' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NJ' ? "selected" : "" ?>>New Jersey</option>
+            <option value='NM' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NM' ? "selected" : "" ?>>New Mexico</option>
+            <option value='NY' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NY' ? "selected" : "" ?>>New York</option>
+            <option value='NC' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'NC' ? "selected" : "" ?>>North Carolina</option>
+            <option value='ND' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'ND' ? "selected" : "" ?>>North Dakota</option>
+            <option value='OH' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'OH' ? "selected" : "" ?>>Ohio</option>
+            <option value='OK' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'OK' ? "selected" : "" ?>>Oklahoma</option>
+            <option value='OR' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'OR' ? "selected" : "" ?>>Oregon</option>
+            <option value='PA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'PA' ? "selected" : "" ?>>Pennsylvania</option>
+            <option value='RI' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'RI' ? "selected" : "" ?>>Rhode Island</option>
+            <option value='SC' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'SC' ? "selected" : "" ?>>South Carolina</option>
+            <option value='SD' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'SD' ? "selected" : "" ?>>South Dakota</option>
+            <option value='TN' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'TN' ? "selected" : "" ?>>Tennessee</option>
+            <option value='TX' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'TX' ? "selected" : "" ?>>Texas</option>
+            <option value='UT' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'UT' ? "selected" : "" ?>>Utah</option>
+            <option value='VT' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'VT' ? "selected" : "" ?>>Vermont</option>
+            <option value='VA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'VA' ? "selected" : "" ?>>Virginia</option>
+            <option value='WA' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'WA' ? "selected" : "" ?>>Washington</option>
+            <option value='WV' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'WV' ? "selected" : "" ?>>West Virginia</option>
+            <option value='WI' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'WI' ? "selected" : "" ?>>Wisconsin</option>
+            <option value='WY' <?= isset($_SESSION['state']) && $_SESSION['state'] == 'WY' ? "selected" : "" ?>>Wyoming</option>
           </select>
         </div>
         <div class="formErrorMsgContainer">
