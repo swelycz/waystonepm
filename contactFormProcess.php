@@ -46,7 +46,7 @@
 
     if (!validateEmail() && !validatePhone()) {
       return ['Email and Phone # are not Valid', false];
-    } elseif (!validateEmail() {
+    } elseif (!validateEmail()) {
       return ['Email is invalid', false];
     } elseif (!validatePhone()) {
       return ['Phone # is invalid', false];
