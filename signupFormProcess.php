@@ -38,11 +38,44 @@
     //var_dump($_POST);
     if (empty($fname) || empty($mi) || empty($lname) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($phone) || empty($DOB) || empty($email) || empty($confEmail) || empty($pass) || empty($confPass)) {
       return ['All Fields Required', false]; // stop function execution w/ error message
-    } else if ($email !== $confEmail) {
+    }
+    $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
+    if ($email !== $confEmail || $emailValidate !== 1) {
+      unset($_SESSION['email']);
+      $validEmail = false;
+    } else {
+      $validEmail = true;
+    }
+    if ($pass !== $confPass) {
+      $validPass = false;
+    } else {
+      $validPass = true;
+    }
+    $zipValidate = preg_match("/(^\d{5}$)|(^\d{5}-\d{4}$)/", $zip, $matches);
+    if (strlen($zip) < 5 || $zipValidate !== 1) {
+      unset($_SESSION['zip']);
+      $validZip = false;
+    } else {
+      $validZip = true;
+    }
+    if (strlen($phone) < 12) {
+      //echo "line 34: phone not valid";
+      unset($_SESSION['phone']);
+      $validPhone = false;
+    } else {
+      //echo "line 37: phone valid";
+      $validPhone = true;
+    }
+    if (!$validZip) {
+      return ['Zip code is not valid', false];
+    } elseif (!$validPhone) {
+      return ['Phone # is not valid', false];
+    } elseif (!$validEmail) {
       return ['Emails Do NOT Match', false]; // stop function execution w/ error message
-    } else if ($pass !== $confPass) {
+    } elseif (!$validPass) {
       return ['Passwords Do NOT Match', false]; // stop function execution w/ error message
     }
+
 
     $q = "select * from ten_login where email = '$email'";
     $result = sqlsrv_query($conn, $q);
@@ -75,7 +108,7 @@
   }
 
   list($msg, $success) = signupUser($conn); // grab return values from signupUser function and store in two variables
-  $_SESSION['msg'] = $msg; // Bind error message to session variable
+  //$_SESSION['msg'] = $msg; // Bind error message to session variable
   $_SESSION['success'] = $success;
 
   if ($success) { // send user to tenant portal if the signup was successful
