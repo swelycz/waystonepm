@@ -22,19 +22,36 @@
     $_SESSION['phone'] = $phone;
     $_SESSION['message'] = $message;
 
+    function validateEmail() {
+      $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
+      if ($emailValidate !== 1) {
+        unset($_SESSION['email']);
+        return false;
+      } else {
+        return true;
+      }
+    }
+    function validatePhone() {
+      if (strlen($phone) < 12) {
+        unset($_SESSION['phone']);
+        return false;
+      } else {
+        return true;
+      }
+    }
+
     if (empty($fname) || empty($lname) || empty($email) || empty($phone)) {
       return ['All Fields Required', false];
     }
-    $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
-    if ($emailValidate !== 1) {
-      unset($_SESSION['email']);
-      return ['Email is not Valid', false];
+
+    if (!validateEmail() && !validatePhone()) {
+      return ['Email and Phone # are not Valid', false];
+    } elseif (!validateEmail() {
+      return ['Email is invalid', false];
+    } elseif (!validatePhone()) {
+      return ['Phone # is invalid', false];
     }
 
-    if (strlen($phone) < 12) {
-      unset($_SESSION['phone']);
-      return ['Phone is not Valid', false];
-    }
     if (empty($message)) {
       $q = "insert CONTACT (FIRSTNAME, LASTNAME, EMAIL, PHONE) values('$fname','$lname','$email','$phone')";
     } else {
