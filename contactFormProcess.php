@@ -26,6 +26,7 @@
       $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
       if ($emailValidate !== 1) {
         unset($_SESSION['email']);
+        echo "unset email";
         return false;
       } else {
         return true;
@@ -34,6 +35,7 @@
     function validatePhone() {
       if (strlen($phone) < 12) {
         unset($_SESSION['phone']);
+        echo "unset phone";
         return false;
       } else {
         return true;
@@ -81,8 +83,9 @@
   }
 
   //sqlsrv_free_stmt($result);
-  //$_SESSION['msg'] = $msg;
-  //echo $_SESSION['msg'];
-  header("Location: contact.php");
+  $_SESSION['msg'] = $msg;
+  echo $_SESSION['msg'];
+  var_dump($_SESSION);
+  //header("Location: contact.php");
 
   ?>
