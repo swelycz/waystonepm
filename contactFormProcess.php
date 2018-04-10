@@ -42,7 +42,7 @@
       return ['All Fields Required', false];
     }
 
-    if (!$validEmail && $validPhone) {
+    if (!$validEmail && !$validPhone) {
       unset($_SESSION['email']);
       unset($_SESSION['phone']);
       echo "unset email and phone";
