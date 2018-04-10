@@ -24,17 +24,17 @@
 
     $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
     if ($emailValidate !== 1) {
-      echo "line 27: email not valid";
+      //echo "line 27: email not valid";
       $validEmail = false;
     } else {
-      echo "line 30: email valid";
+      //echo "line 30: email valid";
       $validEmail = true;
     }
     if (strlen($phone) < 12) {
-      echo "line 34: phone not valid";
+      //echo "line 34: phone not valid";
       $validPhone = false;
     } else {
-      echo "line 37: phone valid";
+      //echo "line 37: phone valid";
       $validPhone = true;
     }
 
@@ -45,15 +45,15 @@
     if (!$validEmail && !$validPhone) {
       unset($_SESSION['email']);
       unset($_SESSION['phone']);
-      echo "unset email and phone";
+      //echo "unset email and phone";
       return ['Email and Phone # are not Valid', false];
     } elseif (!$validEmail) {
       unset($_SESSION['email']);
-      echo "unset email";
+      //echo "unset email";
       return ['Email is invalid', false];
     } elseif (!$validPhone) {
       unset($_SESSION['phone']);
-      echo "unset phone";
+      //echo "unset phone";
       return ['Phone # is invalid', false];
     }
 
@@ -86,9 +86,9 @@
   }
 
   //sqlsrv_free_stmt($result);
-  $_SESSION['msg'] = $msg;
-  echo $_SESSION['msg'];
-  var_dump($_SESSION);
-  //header("Location: contact.php");
+  //$_SESSION['msg'] = $msg;
+  //echo $_SESSION['msg'];
+  //var_dump($_SESSION);
+  header("Location: contact.php");
 
   ?>
