@@ -915,6 +915,12 @@ footer {
 	align-items: flex-start;
 	justify-content: center;
 }
+.hitCounter {
+	height: 80%;
+	padding-bottom: 20%;
+	display: flex;
+	align-items: flex-end;
+}
 footer ul {
 	float: left;
 	padding: 15px 15px;
