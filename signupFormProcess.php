@@ -42,11 +42,13 @@
     $emailValidate = preg_match("/[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/", $email, $matches);
     if ($email !== $confEmail || $emailValidate !== 1) {
       unset($_SESSION['email']);
+      echo "line 45: unset email";
       $validEmail = false;
     } else {
       $validEmail = true;
     }
     if ($pass !== $confPass) {
+      echo "line 51: password invalid";
       $validPass = false;
     } else {
       $validPass = true;
@@ -54,12 +56,13 @@
     $zipValidate = preg_match("/(^\d{5}$)|(^\d{5}-\d{4}$)/", $zip, $matches);
     if (strlen($zip) < 5 || $zipValidate !== 1) {
       unset($_SESSION['zip']);
+      echo "line 59: unset zip";
       $validZip = false;
     } else {
       $validZip = true;
     }
     if (strlen($phone) < 12) {
-      //echo "line 34: phone not valid";
+      echo "line 34: phone not valid";
       unset($_SESSION['phone']);
       $validPhone = false;
     } else {
@@ -67,12 +70,12 @@
       $validPhone = true;
     }
     if (!$validZip) {
-      return ['Zip code is not valid', false];
-    } elseif (!$validPhone) {
-      return ['Phone # is not valid', false];
-    } elseif (!$validEmail) {
+      return ['Zip code is not valid', false]; // stop function execution w/ error message
+    } elseif (!$validPhone) { // checks for invalid phone #
+      return ['Phone # is not valid', false]; // stop function execution w/ error message
+    } elseif (!$validEmail) { // checks for invalid email
       return ['Emails Do NOT Match', false]; // stop function execution w/ error message
-    } elseif (!$validPass) {
+    } elseif (!$validPass) { // checks for invalid password
       return ['Passwords Do NOT Match', false]; // stop function execution w/ error message
     }
 
@@ -108,7 +111,7 @@
   }
 
   list($msg, $success) = signupUser($conn); // grab return values from signupUser function and store in two variables
-  //$_SESSION['msg'] = $msg; // Bind error message to session variable
+
   $_SESSION['success'] = $success;
 
   if ($success) { // send user to tenant portal if the signup was successful
@@ -116,8 +119,9 @@
   } else {
     $location = 'signup.php'; // if it didn't work, redirect back to signup page
   }
-  //echo $_SESSION['msg']; // Here for debugging
+  $_SESSION['msg'] = $msg; // Bind error message to session variable
+  echo $_SESSION['msg']; // Here for debugging
 
-  header("Location: $location");
+  //header("Location: $location");
 
   ?>
