@@ -121,7 +121,7 @@
   }
   $_SESSION['msg'] = $msg; // Bind error message to session variable
   echo $_SESSION['msg']; // Here for debugging
-
+  var_dump($_SESSION);
   //header("Location: $location");
 
   ?>

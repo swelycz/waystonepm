@@ -78,7 +78,6 @@
         <div class="formErrorMsgContainer">
           <p id='zipValidationMsg'>Invalid Zip Code</p>
           <p id='phoneValidationMsg'>Invalid Phone #</p>
-
         </div>
         <div class='signupFormInputs'>
           <input type='text' name='zip' id='zip' value = "<?= isset($_SESSION['zip']) ? $_SESSION['zip'] : "" ?>" placeholder='Zip Code' maxlength='5' required>
