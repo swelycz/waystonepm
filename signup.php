@@ -80,16 +80,16 @@
           <p id='phoneValidationMsg' style="<?= !isset($_SESSION['phone']) ? "visibility: visible;" : "" ?>">Invalid Phone #</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='text' name='zip' id='zip' value = "<?= isset($_SESSION['zip']) ? $_SESSION['zip'] : "" ?>" placeholder='Zip Code' maxlength='5' required>
-          <input type='text' name='phone' id='phone' value = "<?= isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder='Phone Number' maxlength='12' required>
+          <input type='text' name='zip' id='zip' style="<?= !isset($_SESSION['zip']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['zip']) ? $_SESSION['zip'] : "" ?>" placeholder='Zip Code' maxlength='5' required>
+          <input type='text' name='phone' id='phone' style="<?= !isset($_SESSION['phone']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder='Phone Number' maxlength='12' required>
           <input type="text" name="DOB" id="DOB" value = "<?= isset($_SESSION['DOB']) ? $_SESSION['DOB'] : "" ?>" placeholder="Date of Birth" maxlength="0">
         </div><div class='signupFormInputs'>
           <p id='emailValidationMsg' style="<?= !isset($_SESSION['email']) ? "visibility: visible;" : "" ?>">Email entered is not valid</p>
           <p id='confEmailValidationMsg' style="<?= !isset($_SESSION['confEmail']) ? "visibility: visible;" : "" ?>">Emails do not match</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='text' name='email' id='email' value = "<?= isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder='Email Address' maxlength='64' required>
-          <input type='text' name='confEmail' id='confEmail' value = "<?= isset($_SESSION['confEmail']) ? $_SESSION['confEmail'] : "" ?>" placeholder='Confirm Email' maxlength='64' required>
+          <input type='text' name='email' id='email' style="<?= !isset($_SESSION['email']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder='Email Address' maxlength='64' required>
+          <input type='text' name='confEmail' id='confEmail' style="<?= !isset($_SESSION['confEmail']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['confEmail']) ? $_SESSION['confEmail'] : "" ?>" placeholder='Confirm Email' maxlength='64' required>
         </div>
         <div class='signupFormInputs'>
           <p id='confPassValidationMsg'>Passwords do not match</p>
