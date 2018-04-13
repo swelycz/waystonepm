@@ -59,7 +59,7 @@
       $_SESSION['validConfPass'] = false;
       $validConfPass = false;
     } else {
-      $_SESSION['validConfPass'] = true;
+      unset($_SESSION['validConfPass']);
       $validConfPass = true;
     }
     if ($pass !== $confPass) {
@@ -67,7 +67,7 @@
       $_SESSION['validPass'] = false;
       $validPass = false;
     } else {
-      $_SESSION['validPass'] = true;
+      unset($_SESSION['validPass']);
       $validPass = true;
     }
     $zipValidate = preg_match("/(^\d{5}$)|(^\d{5}-\d{4}$)/", $zip, $matches);
@@ -139,6 +139,7 @@
     session_destroy();
     $location = 'https://waystonepm-tenantportal.azurewebsites.net';
   } else {
+    $_SESSION['signupAttempt'];
     $location = 'signup.php'; // if it didn't work, redirect back to signup page
   }
   //$_SESSION['msg'] = $msg; // Bind error message to session variable
