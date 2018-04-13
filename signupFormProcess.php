@@ -139,7 +139,7 @@
     session_destroy();
     $location = 'https://waystonepm-tenantportal.azurewebsites.net';
   } else {
-    $_SESSION['signupAttempt'];
+    $_SESSION['signupAttempt'] = true;
     $location = 'signup.php'; // if it didn't work, redirect back to signup page
   }
   //$_SESSION['msg'] = $msg; // Bind error message to session variable
