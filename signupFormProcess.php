@@ -59,15 +59,15 @@
       unset($_SESSION['validConfPass']);
       $validConfPass = false;
     } else {
-      $_SESSION['validConfPass'] = false;
+      $_SESSION['validConfPass'] = true;
       $validConfPass = true;
     }
     if ($pass !== $confPass) {
       //echo "line 51: password invalid";
-      unset($_SESSION['validPass']);      
+      unset($_SESSION['validPass']);
       $validPass = false;
     } else {
-      $_SESSION['validPass'] = false;
+      $_SESSION['validPass'] = true;
       $validPass = true;
     }
     $zipValidate = preg_match("/(^\d{5}$)|(^\d{5}-\d{4}$)/", $zip, $matches);

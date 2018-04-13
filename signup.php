@@ -101,10 +101,10 @@
           <input type='text' name='confEmail' id='confEmail' style="<?= $signupAttempt && !isset($_SESSION['confEmail']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['confEmail']) ? $_SESSION['confEmail'] : "" ?>" placeholder='Confirm Email' maxlength='64' required>
         </div>
         <div class='signupFormInputs'>
-          <p id='confPassValidationMsg' style="<?= $signupAttempt && isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Passwords do not match</p>
+          <p id='confPassValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Passwords do not match</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='password' name='password' id='password' style="<?= $signupAttempt && isset($_SESSION['validPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Password' maxlength='32' required>
+          <input type='password' name='password' id='password' style="<?= $signupAttempt && !isset($_SESSION['validPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Password' maxlength='32' required>
           <input type='password' name='confPass' id='confPassword' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Confirm Password' maxlength='32' required>
         </div>
         <button type='submit' class='signupButton noSelect'></button>
