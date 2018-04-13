@@ -56,18 +56,18 @@
     }
     if ($pass !== $confPass) {
       //echo "line 51: passwords dont match";
-      $_SESSION['validConfPass'] = false;
+      unset($_SESSION['validConfPass']);
       $validConfPass = false;
     } else {
-      unset($_SESSION['validConfPass']);
+      $_SESSION['validConfPass'] = false;
       $validConfPass = true;
     }
     if ($pass !== $confPass) {
       //echo "line 51: password invalid";
-      $_SESSION['validPass'] = false;
+      unset($_SESSION['validPass']);      
       $validPass = false;
     } else {
-      unset($_SESSION['validPass']);
+      $_SESSION['validPass'] = false;
       $validPass = true;
     }
     $zipValidate = preg_match("/(^\d{5}$)|(^\d{5}-\d{4}$)/", $zip, $matches);
