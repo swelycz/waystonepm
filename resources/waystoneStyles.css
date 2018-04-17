@@ -299,6 +299,24 @@ nav ul li {
 	border: none;
 	text-decoration: none;
 }
+.sectionTitlePannel {
+	height: 250px;
+	background: url("../images/greyBackground.png") 100% no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.sectionTitleWrapper {
+	height: 100%;
+	width: 100%;
+	background: rgba(10,14,43,.85);
+}
+.sectionTitle {
+	font-size: 60px;
+	padding: 20px 50px;
+}
 .cityWrapper {
 	display: flex;
 	align-items: center;

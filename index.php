@@ -19,6 +19,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="contentPannel sectionTitlePannel">
+			<div class = "subtitleWrapper sectionTitleWrapper">
+				<div class = "subtitle sectionTitle">WAYSTONE HISTORY</div>
+			</div>
+		</div>
 		<div class="contentPannel cityWrapper miami-Wrapper">
 			<div class = "cityInfoContainer">
 				<div class = "cityTitleContainer">
