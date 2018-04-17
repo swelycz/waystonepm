@@ -301,7 +301,7 @@ nav ul li {
 }
 .sectionTitlePannel {
 	height: 250px;
-	background: url("../images/greyBackground.png") 100% no-repeat;
+	background: url("../images/greyBackground.jpg") 100% no-repeat;
 	background-size: 100% 100%;
 	background-attachment: fixed;
 	display: flex;
