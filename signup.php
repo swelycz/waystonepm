@@ -101,7 +101,7 @@
           <input type='text' name='confEmail' id='confEmail' style="<?= $signupAttempt && !isset($_SESSION['confEmail']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['confEmail']) ? $_SESSION['confEmail'] : "" ?>" placeholder='Confirm Email' maxlength='64' required>
         </div>
         <div class='formErrorMsgContainer signupFormErrors'>
-          <p id='passValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Requires 1 capital, 1 num, 8 characters</p>
+          <p id='passValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validPass']) ? "visibility: visible;" : "" ?>">Requires 1 capital, 1 num, 8 characters</p>
           <p id='confPassValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Passwords do not match</p>
         </div>
         <div class='signupFormInputs'>

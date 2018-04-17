@@ -64,7 +64,7 @@
     }
     $passValidate = preg_match("/(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/", $pass, $matches);
     if ($passValidate !== 1) {
-      //echo "line 51: password invalid";
+      echo "line 51: password invalid";
       unset($_SESSION['validPass']);
       $validPass = false;
     } else {
@@ -143,9 +143,9 @@
     $_SESSION['signupAttempt'] = true;
     $location = 'signup.php'; // if it didn't work, redirect back to signup page
   }
-  //$_SESSION['msg'] = $msg; // Bind error message to session variable
-  //echo $_SESSION['msg']; // Here for debugging
-  //var_dump($_SESSION);
+  $_SESSION['msg'] = $msg; // Bind error message to session variable
+  echo $_SESSION['msg']; // Here for debugging
+  var_dump($_SESSION);
   header("Location: $location");
 
   ?>
