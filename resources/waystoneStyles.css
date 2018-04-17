@@ -755,7 +755,12 @@ nav ul li {
 #confPassValidationMsg {
 	visibility: hidden;
 	color: var(--red);
-	margin-left: 250px;
+	margin-left: 15px;
+}
+#passValidationMsg {
+	margin-left: 42px;
+	visibility: hidden;
+	color: var(--red);
 }
 #confPassword {
 	box-shadow: none;
@@ -781,30 +786,27 @@ nav ul li {
 	align-items: center;
 	flex-direction: column;
 }
-.signupFormErrorMsg {
-	color: var(--red);
-	var(--p-font);
-	font-size: 16px;
-	height: 10px;
-}
 .signupFormInputs {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.signupFormInputs #emailValidationMsg {
-	padding-right: 100px;
+.signupFormErrors #emailValidationMsg {
+	margin-left: 80px;
+}
+.signupFormErrors #confEmailValidationMsg {
+	margin-left: 88px;
 }
 .formErrorMsgContainer {
 	display: flex;
-	width: 420px;
+	width: 100%;
 }
 .formErrorMsgContainer p {
 	color: var(--red);
 	font-size: 14px;
 }
 .formErrorMsgContainer #zipValidationMsg {
-	padding-right: 40px;
+	padding-right: 80px;
 	visibility: hidden;
 }
 .formErrorMsgContainer #phoneValidationMsg {
@@ -813,14 +815,32 @@ nav ul li {
 #DOB {
 	width: 110px;
 }
+.signupForm #fname, .signupForm #lname {
+	margin-left: 0;
+	margin-right: 0;
+}
+.signupForm #mIni {
+	margin-left: 17px;
+	margin-right: 18px;
+}
+.signupForm #address {
+	margin-left: 0;
+}
 .signupForm #city {
 	width: 120px;
 }
 .signupForm #zip {
-	width: 110px;
+	width: 120px;
+	margin-left: 0;
 }
 .signupForm #phone {
-	width: 130px;
+	width: 150px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+.signupForm #DOB {
+	width: 120px;
+	margin-left: 0;
 }
 .signupForm input {
 	margin-left: 10px;

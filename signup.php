@@ -89,10 +89,10 @@
           <p id='phoneValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['phone']) ? "visibility: visible;" : "" ?>">Invalid Phone #</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='text' name='zip' id='zip' style="<?= $signupAttempt && !isset($_SESSION['zip']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['zip']) ? $_SESSION['zip'] : "" ?>" placeholder='Zip Code' maxlength='5' required>
-          <input type='text' name='phone' id='phone' style="<?= $signupAttempt && !isset($_SESSION['phone']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder='Phone Number' maxlength='12' required>
+          <input type='text' name='zip' id='zip' pattern="(\d{5}([\-]\d{4})?)" style="<?= $signupAttempt && !isset($_SESSION['zip']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['zip']) ? $_SESSION['zip'] : "" ?>" placeholder='Zip Code' maxlength='5' required>
+          <input type='text' name='phone' id='phone' pattern="\d{3}[\-]\d{3}[\-]\d{4}" style="<?= $signupAttempt && !isset($_SESSION['phone']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder='Phone Number' maxlength='12' required>
           <input type="text" name="DOB" id="DOB" value = "<?= isset($_SESSION['DOB']) ? $_SESSION['DOB'] : "" ?>" placeholder="Date of Birth" maxlength="0">
-        </div><div class='signupFormInputs'>
+        </div><div class='formErrorMsgContainer signupFormErrors'>
           <p id='emailValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['email']) ? "visibility: visible;" : "" ?>">Email entered is not valid</p>
           <p id='confEmailValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['confEmail']) ? "visibility: visible;" : "" ?>">Emails do not match</p>
         </div>
@@ -100,11 +100,12 @@
           <input type='text' name='email' id='email' style="<?= $signupAttempt && !isset($_SESSION['email']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder='Email Address' maxlength='64' required>
           <input type='text' name='confEmail' id='confEmail' style="<?= $signupAttempt && !isset($_SESSION['confEmail']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['confEmail']) ? $_SESSION['confEmail'] : "" ?>" placeholder='Confirm Email' maxlength='64' required>
         </div>
-        <div class='signupFormInputs'>
+        <div class='formErrorMsgContainer signupFormErrors'>
+          <p id='passValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Requires 1 capital, 1 num, 8 characters</p>
           <p id='confPassValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Passwords do not match</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='password' name='password' id='password' style="<?= $signupAttempt && !isset($_SESSION['validPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Password' maxlength='32' required>
+          <input type='password' name='password' id='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" style="<?= $signupAttempt && !isset($_SESSION['validPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Password' maxlength='32' required>
           <input type='password' name='confPass' id='confPassword' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Confirm Password' maxlength='32' required>
         </div>
         <button type='submit' class='signupButton noSelect'></button>
@@ -119,11 +120,14 @@
       e.preventDefault();
     }
   }
+
   var passInput=document.querySelector('#password');
   var confPassInput=document.querySelector('#confPassword');
+  var pass;
+  var confPass;
   function comparePass(){
-    var pass=passInput.value;
-    var confPass=confPassInput.value;
+    pass=passInput.value;
+    confPass=confPassInput.value;
     if (confPass !==pass){
       $('#confPassword').css('border-color','#ff0000');
       $('#confPassword').css('box-shadow','0 0 10px #ff0000');
@@ -136,8 +140,27 @@
       return true;
     }
   }
+  function checkPass(pass) {
+    var isValidPass = /(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/;
+    return isValidPass.test(pass);
+  }
+  function verifyPass() {
+    pass=passInput.value;
+    if (!checkPass(pass)) {
+      $('#password').css('border-color','#ff0000');
+      $('#password').css('box-shadow','0 0 10px #ff0000');
+      $('#passValidationMsg').css('visibility','visible');
+      return false;
+    } else {
+      $('#password').css('border-color','');
+      $('#password').css('box-shadow','');
+      $('#passValidationMsg').css('visibility','');
+      return true;
+    }
+  }
   if (passInput !== null) {
     passInput.addEventListener('input', function(){
+      verifyPass();
       comparePass();
     });
   }

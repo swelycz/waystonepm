@@ -62,7 +62,8 @@
       $_SESSION['validConfPass'] = true;
       $validConfPass = true;
     }
-    if ($pass !== $confPass) {
+    $passValidate = preg_match("/(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/", $pass, $matches);
+    if ($passValidate !== 1) {
       //echo "line 51: password invalid";
       unset($_SESSION['validPass']);
       $validPass = false;
