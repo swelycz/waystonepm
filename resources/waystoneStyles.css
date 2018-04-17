@@ -300,7 +300,7 @@ nav ul li {
 	text-decoration: none;
 }
 .sectionTitlePannel {
-	height: 250px;
+	height: 150px;
 	background: url("../images/greyBackground.jpg") 100% no-repeat;
 	background-size: 100% 100%;
 	background-attachment: fixed;
@@ -315,7 +315,7 @@ nav ul li {
 }
 .sectionTitle {
 	font-size: 60px;
-	padding: 20px 50px;
+	padding: 0 30px;
 }
 .cityWrapper {
 	display: flex;
