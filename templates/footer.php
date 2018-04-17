@@ -13,6 +13,15 @@
               <li><a href = "signup.php">Sign up</a></li>
             </ul>
           </div>
+          <div class="hitCounter">
+            <!-- hitwebcounter Code START -->
+            <a href="http://www.hitwebcounter.com" target="_blank">
+              <img src="http://hitwebcounter.com/counter/counter.php?page=6929564&style=0006&nbdigits=5&type=page&initCount=0" title="web page hit counters codes Free" Alt="web page hit counters codes Free"   border="0" >
+            </a><br/>
+            <!-- hitwebcounter.com --><a href="http://www.hitwebcounter.com" title="" target="_blank" style="font-family: ; font-size: px; color: #; text-decoration:  ;">
+            </>
+            </a>
+          </div>          
         </div>
         <div class = "footerLogoWrapper"><div class = "footerLogo"></div></div>
         <div class = "footerContactInfoWrapper">

@@ -10,6 +10,15 @@
           if (isset($_SESSION['msg'])) {
             echo $_SESSION['msg'];
           }
+          if (isset($_SESSION['signupAttempt'])) {
+            if ($_SESSION['signupAttempt']) {
+              $signupAttempt = true;
+            } else {
+              $signupAttempt = false;
+            }
+          } else {
+            $signupAttempt = false;
+          }
         ?>
       </p>
       <form class='signupForm' name='signupForm' id='signupForm' action='signupFormProcess.php' method='post'>
@@ -76,28 +85,27 @@
           </select>
         </div>
         <div class="formErrorMsgContainer">
-          <p id='zipValidationMsg'>Invalid Zip Code</p>
-          <p id='phoneValidationMsg'>Invalid Phone #</p>
-
+          <p id='zipValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['zip']) ? "visibility: visible;" : "" ?>">Invalid Zip Code</p>
+          <p id='phoneValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['phone']) ? "visibility: visible;" : "" ?>">Invalid Phone #</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='text' name='zip' id='zip' placeholder='Zip Code' maxlength='5' required>
-          <input type='text' name='phone' id='phone' placeholder='Phone Number' maxlength='12' required>
-          <input type="text" name="DOB" id="DOB" placeholder="Date of Birth" maxlength="0">
+          <input type='text' name='zip' id='zip' style="<?= $signupAttempt && !isset($_SESSION['zip']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['zip']) ? $_SESSION['zip'] : "" ?>" placeholder='Zip Code' maxlength='5' required>
+          <input type='text' name='phone' id='phone' style="<?= $signupAttempt && !isset($_SESSION['phone']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder='Phone Number' maxlength='12' required>
+          <input type="text" name="DOB" id="DOB" value = "<?= isset($_SESSION['DOB']) ? $_SESSION['DOB'] : "" ?>" placeholder="Date of Birth" maxlength="0">
         </div><div class='signupFormInputs'>
-          <p id='emailValidationMsg'>Email entered is not valid</p>
-          <p id='confEmailValidationMsg'>Emails do not match</p>
+          <p id='emailValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['email']) ? "visibility: visible;" : "" ?>">Email entered is not valid</p>
+          <p id='confEmailValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['confEmail']) ? "visibility: visible;" : "" ?>">Emails do not match</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='text' name='email' id='email' placeholder='Email Address' maxlength='64' required>
-          <input type='text' name='confEmail' id='confEmail' placeholder='Confirm Email' maxlength='64' required>
+          <input type='text' name='email' id='email' style="<?= $signupAttempt && !isset($_SESSION['email']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['email']) ? $_SESSION['email'] : "" ?>" placeholder='Email Address' maxlength='64' required>
+          <input type='text' name='confEmail' id='confEmail' style="<?= $signupAttempt && !isset($_SESSION['confEmail']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= $signupAttempt && isset($_SESSION['confEmail']) ? $_SESSION['confEmail'] : "" ?>" placeholder='Confirm Email' maxlength='64' required>
         </div>
         <div class='signupFormInputs'>
-          <p id='confPassValidationMsg'>Passwords do not match</p>
+          <p id='confPassValidationMsg' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "visibility: visible;" : "" ?>">Passwords do not match</p>
         </div>
         <div class='signupFormInputs'>
-          <input type='password' name='password' id='password' placeholder='Password' maxlength='32' required>
-          <input type='password' name='confPass' id='confPassword' placeholder='Confirm Password' maxlength='32' required>
+          <input type='password' name='password' id='password' style="<?= $signupAttempt && !isset($_SESSION['validPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Password' maxlength='32' required>
+          <input type='password' name='confPass' id='confPassword' style="<?= $signupAttempt && !isset($_SESSION['validConfPass']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" placeholder='Confirm Password' maxlength='32' required>
         </div>
         <button type='submit' class='signupButton noSelect'></button>
       </form>
