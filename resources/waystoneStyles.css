@@ -1043,6 +1043,9 @@ footer ul li a {
 	.contentPannel {
 		height: 500px;
 	}
+	.sectionTitlePannel {
+		height: 150px;
+	}
 	.loginButton {
 		font-size: 30px;
 	}
