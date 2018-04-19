@@ -812,6 +812,9 @@ nav ul li {
 .formErrorMsgContainer #phoneValidationMsg {
 	visibility: hidden;
 }
+.signupFormErrorMsg {
+	color: var(--red);
+}
 #DOB {
 	width: 110px;
 }
