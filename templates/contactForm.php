@@ -11,7 +11,7 @@
     </div>
     <div class="phoneContainer">
       <p id="phoneValidationMsg" style="<?= $msgAttempt && !isset($_SESSION['phone']) ? "visibility: visible;" : "" ?>">Phone # entered is not valid</p>
-      <input type="text" id="phone" name="phone" maxlength="14" style="<?= $msgAttempt && !isset($_SESSION['phone']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder="Phone Number" required>
+      <input type="text" id="phone" name="phone" maxlength="14" pattern="\d{3}[\-]\d{3}[\-]\d{4}" style="<?= $msgAttempt && !isset($_SESSION['phone']) ? "border-color: #ff0000; box-shadow: 0 0 10px #ff0000;" : "" ?>" value = "<?= isset($_SESSION['phone']) ? $_SESSION['phone'] : "" ?>" placeholder="Phone Number" required>
     </div>
   </div>
   <div class="contactFormInputs">
